@@ -1,18 +1,33 @@
 * {
-    margin: 5px;
+    margin: 5px; /* Set the surrounding margins to 5 */
 }
 
 body {
-    background-color: #1f2b3e;
+    background-color: #1f2b3e; /* Set the background */
 }
 
+/* Add new font */
 @font-face {
     font-family: "Lato-Black";
     src: url("../resources/font/Lato/Lato-Black.ttf") format("truetype");
 }
 
-.brand {
-    font-size: 100px;
+/* Add new font */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+/* Set style for our brand name at top right corner */
+#brand {
+    font-size: 140px;
     font-family: "Lato-Black";
+    color: #FFFFFF;
+}
+
+/* Set style for real time display */
+#time {
+    font-size: 50px;
+    font-family: "Montserrat";
     color: #FFFFFF;
 }

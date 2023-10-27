@@ -7,8 +7,27 @@
     </head>
 
     <body>
-        <div class="brand">
+        <div id="brand">
             <p>RideLink</p>
         </div>
+
+        <div id="time"></div>
+        <script>
+            // To get element
+            const timeDiv = document.getElementById('time');
+            // Create a function to get time
+            function updateTime() {
+                // get local time
+                const now = new Date();
+                // Formatting data
+                const formattedTime = now.toLocaleTimeString();
+                // output the data to the div
+                timeDiv.textContent = "Time: " + formattedTime;
+            }
+            // display time when the page is loaded for the first time
+            updateTime();
+            // update time per second
+            setInterval(updateTime, 1000);
+        </script>
     </body>
 </html>
