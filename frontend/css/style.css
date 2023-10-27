@@ -1,0 +1,18 @@
+* {
+    margin: 5px;
+}
+
+body {
+    background-color: #1f2b3e;
+}
+
+@font-face {
+    font-family: "Lato-Black";
+    src: url("../resources/font/Lato/Lato-Black.ttf") format("truetype");
+}
+
+.brand {
+    font-size: 100px;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+}
