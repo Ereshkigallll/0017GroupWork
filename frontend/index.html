@@ -4,12 +4,40 @@
         <meta charset="utf-8">
         <title>RideLink: Boost Your Trip</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+        rel="stylesheet">
     </head>
 
     <body>
-        <div id="brand">
-            <span>RideLink</span>
-            <button id="account">Account</button>
+        <div id="header">
+            <div id="brand">
+                <span>RideLink</span>
+            </div>
+            <div class="wrapper">
+                <nav>
+                    <input type="radio" name="tab" id="home" checked>
+                    <input type="radio" name="tab" id="overview">
+                    <input type="radio" name="tab" id="data">
+                    <input type="radio" name="tab" id="findings">
+                    <input type="radio" name="tab" id="user">
+                    <label for="home" class="home" onclick="location.href='#';">
+                        <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
+                    </label>
+                    <label for="overview" class="overview" onclick="location.href='#';">
+                        <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
+                    </label>
+                    <label for="data" class="data" onclick="location.href='#';">
+                        <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
+                    </label>
+                    <label for="findings" class="findings" onclick="location.href='#';">
+                        <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
+                    </label>
+                    <label for="user" class="user" onclick="location.href='#';">
+                        <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                    </label>
+                    <div class="tab"></div>
+                </nav>
+            </div>
         </div>
 
         <div id="time"></div>
