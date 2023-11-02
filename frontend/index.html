@@ -13,7 +13,9 @@
         <!--MapBox 2.10.0-->
         <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
         <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
-      <body>
+    </head>
+
+    <body>
         <div id="header">
             <div id="brand">
                 <span>RideLink</span>
@@ -52,8 +54,6 @@
         </div>
 
         <div id="time"></div>
-        
-<script type="text/javascript" src="./js/database.js"></script>
         <script>
             const timeDiv = document.getElementById('time'); // To get element
             // Create a function to get time
@@ -70,8 +70,18 @@
         <div id="container">
             <iframe width='70%' height='1000vw' src="https://api.mapbox.com/styles/v1/yutong0629/cloc3h4aj013y01qx5kvs2huq.html?title=false&access_token=pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw&zoomwheel=false#13.32/40.70958/-74.00441" title="Monochrome" style="border:none;"></iframe>
         </div>
+
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.search-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './search.html';
+                });
+            });
+        </script>
     </body>
 </html>
 
+<script type="text/javascript" src="./js/database.js"></script>
 <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
 <script src="./js/database.js"></script>
