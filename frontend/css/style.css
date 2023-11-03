@@ -35,7 +35,7 @@ body {
 }
 
 #brand {
-    font-size: 140px;
+    font-size: 4vw;
     font-family: "Lato-Black";
     color: #FFFFFF;
     margin-left: 2vw;
@@ -47,8 +47,8 @@ body {
     clear: both;
     justify-content: center;
     width: 60vw;
-    height: 100px;
-    line-height: 100px;
+    height: 3.4vw;
+    line-height: 3.4vw;
     background-color: #1F3A5F;
     /* box shadow */
     box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
@@ -122,7 +122,7 @@ body {
 
 /* Set style for real time display */
 #time {
-    font-size: 50px;
+    font-size: 2vw;
     font-family: "Montserrat";
     color: #FFFFFF;
     margin-left: 110px;
@@ -145,9 +145,9 @@ body {
 
 .search-btn {
     justify-content: center;
-    height: 100px;
+    height: 3.3vw;
     width: 10vw;
-    margin-top: 1vw;
+    margin-top: 0.9vw;
     background: transparent; /* Transparent background */
     border: 7px solid #FFFFFF; /* White border */
     color: white; /* White text color */
