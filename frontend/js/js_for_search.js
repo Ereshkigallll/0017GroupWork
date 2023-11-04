@@ -1,10 +1,11 @@
-mapboxgl.accessToken = 'https://api.mapbox.com/styles/v1/yutong0629/cloc3h4aj013y01qx5kvs2huq.html?title=false&access_token=pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw&zoomwheel=false#13.32/40.70958/-74.00441'; // 替换为你自己的Mapbox访问令牌
+mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw'; // 替换为你自己的Mapbox访问令牌
 
-var map = new mapboxgl.Map({
-    container: 'map-container',
-    style: 'mapbox://styles/mapbox/streets-v11', // 替换为你选择的地图样式
-    center: [0, 0], // 默认地图中心坐标
-    zoom: 9 // 默认缩放级别
+const map = new mapboxgl.Map({
+    container: 'map-container', // container ID
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v12', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
 });
 
 var geocoder = new MapboxGeocoder({

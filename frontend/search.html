@@ -3,41 +3,22 @@
 <head>
     <!-- 添加你的CSS链接 -->
     <link rel="stylesheet" type="text/css" href="resources\css\style_search.css">
+     <!-- 引入Mapbox的JavaScript API -->
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+     <!-- 引入Mapbox的CSS文件 -->
+     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+     <!-- 引入MapboxGeocoder插件 -->
+     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+     <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
       <!-- 引入Mapbox的JavaScript API -->
       <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-      <script src='js\js_for_search.js'></script>
-      <!-- 引入Mapbox的CSS文件 -->
-      <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+      <!--<script src='js\js_for_search.js'></script>-->
+     
 </head>
 <body>
     <div id="header">
         <div id="brand">
             <span>RideLink</span>
-        </div>
-        <div class="wrapper">
-            <nav>
-                <input type="radio" name="tab" id="home" checked>
-                <input type="radio" name="tab" id="overview">
-                <input type="radio" name="tab" id="data">
-                <input type="radio" name="tab" id="findings">
-                <input type="radio" name="tab" id="user">
-                <label for="home" class="home" onclick="location.href='#';">
-                    <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
-                </label>
-                <label for="overview" class="overview" onclick="location.href='#';">
-                    <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
-                </label>
-                <label for="data" class="data" onclick="location.href='#';">
-                    <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
-                </label>
-                <label for="findings" class="findings" onclick="location.href='#';">
-                    <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
-                </label>
-                <label for="user" class="user" onclick="location.href='#';">
-                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
-                </label>
-                <div class="tab"></div>
-            </nav>
         </div>
     </div>
     <div class="container">
@@ -46,12 +27,46 @@
             <button id="search-button">搜索</button>
         </div>
     </div>
-    <div class="container1">
-        <div id="map-container">
-        <!-- 这里是地图内容 -->
-        <iframe width='100%' height='600px' src="https://api.mapbox.com/styles/v1/yutong0629/cloc3h4aj013y01qx5kvs2huq.html?title=false&access_token=pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw&zoomwheel=false#13.32/40.70958/-74.00441" title="Monochrome" style="border:none;"></iframe>
-        </div>
+    
+    <div id="map-container">
+        <div id="map-container" style="width: 100%; height: 600px;"></div>
     </div>
+    
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw'; // 替换为你自己的Mapbox访问令牌
+
+        var map = new mapboxgl.Map({
+            container: 'map-container',
+            style: 'mapbox://styles/mapbox/streets-v11', // 替换为你选择的地图样式
+            center: [-75, 40], // 默认地图中心坐标
+            zoom: 9 // 默认缩放级别
+        });
+
+        document.getElementById('search-button').addEventListener('click', function () {
+            var searchTerm = document.getElementById('search-input').value;
+
+            // 发送地理编码请求到Mapbox API
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${searchTerm}.json?access_token=${mapboxgl.accessToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.features.length > 0) {
+                        // 获取地理编码结果中的坐标
+                        var coordinates = data.features[0].center;
+
+                        // 在地图上添加标记
+                        new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
+                        // 将地图中心设置为搜索结果的位置
+                        map.setCenter(coordinates);
+                    } else {
+                        alert('未找到地点');
+                    }
+                })
+                .catch(error => {
+                    console.error('地理编码请求失败:', error);
+                });
+        });
+    </script>
 </body>
 </html>
 

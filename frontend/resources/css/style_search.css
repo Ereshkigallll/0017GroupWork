@@ -51,35 +51,19 @@ body {
     /* 在这里添加地图样式 */
 }
 
-.container1{
-    width: 100%; /* 页面宽度的75% */
-    height: 100%; /* 页面高度的75% */
+/*.container1{
+    width: 100%; /* 页面宽度的75% 
+    height: 100%; /* 页面高度的75% 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 
     padding-right:2cm;
     padding-left:2cm;
     box-sizing: border-box;
-}
+}*/
 
-/* Add new font */
-@font-face {
-    font-family: "Lato-Black";
-    src: url("../resources/font/Lato/Lato-Black.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Lato-Regular";
-    src: url("../resources/font/Lato/Lato-Regular.ttf") format("truetype");
-}
-
-/* Add new font */
-@font-face {
-    font-family: "Montserrat";
-    src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
-}
 
 #header {
     display: flex; /* Make header a flex container */
@@ -102,80 +86,3 @@ body {
     justify-content: space-between;
 }
 
-.wrapper{
-    clear: both;
-    justify-content: center;
-    width: 60vw;
-    height: 3.4vw;
-    line-height: 3.4vw;
-    background-color: #1F3A5F;
-    /* box shadow */
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
-    border-radius: 50px;
-    margin-top: 1vw;
-    margin-right: 3vw;
-}
-.wrapper nav{
-    display: flex;
-    position: relative;
-}
-.wrapper nav label{
-    display: flex;
-    flex:1;
-    width:100%;
-    position: relative;
-    z-index: 1;
-    cursor: pointer;
-    justify-content: center;
-}
-.wrapper nav label a{
-    position: relative;
-    z-index: -1;
-    color: #333;
-    font-size: 1.5vw;
-    font-weight: 500;
-    text-decoration: none;
-    color: #FFFFFF;
-    font-family: "Montserrat";
-}
-.wrapper nav label a i{
-    font-size: 1.5vw;
-    margin: 0px 7px;
-}
-.wrapper nav input{
-    display: none;
-}
-.wrapper nav .tab{
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    left: 0px;
-    bottom: 0px;
-    /* Gradient Background From Left to Right */
-    background: linear-gradient(to right, #4d648d, #88c6fd);
-    border-radius: 50px;
-    /*  Using Bezier curves to add animated transitions  */
-    transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
-}
-
-.wrapper nav #home:checked ~ label.home a,
-.wrapper nav #overview:checked ~ label.overview a,
-.wrapper nav #data:checked ~ label.data a,
-.wrapper nav #findings:checked ~ label.findings a,
-.wrapper nav #user:checked ~ label.user a{
-    color: #fff;
-    /* Add transition to font colour changes */
-    transition: 0.4s;
-}
-.wrapper nav #overview:checked ~ .tab{
-    left: 20%;
-}
-.wrapper nav #data:checked ~ .tab{
-    left: 40%;
-}
-.wrapper nav #findings:checked ~ .tab{
-    left: 60%;
-}
-.wrapper nav #user:checked ~ .tab{
-    left: 80%;
-}
