@@ -1,0 +1,2 @@
+
+$(function(){alert(2);})
