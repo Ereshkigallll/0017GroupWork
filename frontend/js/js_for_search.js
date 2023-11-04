@@ -1,29 +1,33 @@
-$(document).ready(function () {
-    // 初始化地图，使用你的地图API初始化地图对象
-    var map = new YourMapLibrary.Map(document.getElementById('map-container'));
+mapboxgl.accessToken = 'https://api.mapbox.com/styles/v1/yutong0629/cloc3h4aj013y01qx5kvs2huq.html?title=false&access_token=pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw&zoomwheel=false#13.32/40.70958/-74.00441'; // 替换为你自己的Mapbox访问令牌
 
-    // 监听搜索框输入
-    $('#search-input').on('input', function () {
-        var searchTerm = $(this).val(); // 获取搜索词
+var map = new mapboxgl.Map({
+    container: 'map-container',
+    style: 'mapbox://styles/mapbox/streets-v11', // 替换为你选择的地图样式
+    center: [0, 0], // 默认地图中心坐标
+    zoom: 9 // 默认缩放级别
+});
 
-        // 发送搜索请求到后端，获取搜索结果（假设后端提供了API）
-        $.ajax({
-            url: 'your-backend-api-endpoint',
-            method: 'GET',
-            data: { query: searchTerm },
-            success: function (data) {
-                // 在地图上显示搜索结果
-                map.clearMarkers(); // 清除之前的标记
-                data.forEach(function (result) {
-                    var marker = new YourMapLibrary.Marker({
-                        position: { lat: result.lat, lng: result.lng },
-                        map: map
-                    });
-                });
-            },
-            error: function (error) {
-                console.error('搜索失败：' + error);
-            }
-        });
+var geocoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken,
+    mapboxgl: mapboxgl
+});
+
+document.getElementById('search-button').addEventListener('click', function () {
+    var searchTerm = document.getElementById('search-input').value;
+
+    geocoder.query(searchTerm);
+
+    geocoder.on('result', function (e) {
+        // 获取地理编码结果
+        var result = e.result;
+
+        // 获取地点的经纬度
+        var coordinates = result.geometry.coordinates;
+
+        // 在地图上添加标记
+        new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
+        // 将地图中心设置为搜索结果的位置
+        map.setCenter(coordinates);
     });
 });
