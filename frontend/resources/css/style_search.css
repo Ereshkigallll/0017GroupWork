@@ -1,0 +1,181 @@
+* {
+    margin: 0; /* Set the surrounding margins to 0 */
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #1f2b3e; /* Set the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: stretch;
+}
+
+.container {
+    width: 100%; /* 页面宽度的75% */
+    height: 100%; /* 页面高度的75% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-right:4cm;
+    padding-bottom:1cm;
+    padding-left:4cm;
+    box-sizing: border-box;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* 搜索框 */
+#search-input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+/* 搜索按钮 */
+#search-button {
+    padding: 5px 15px;
+}
+/* 地图容器 */
+#map-container {
+    width: 100%;
+    flex: 1; /* 填充剩余空间 */
+    /* 在这里添加地图样式 */
+}
+
+.container1{
+    width: 100%; /* 页面宽度的75% */
+    height: 100%; /* 页面高度的75% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-right:2cm;
+    padding-left:2cm;
+    box-sizing: border-box;
+}
+
+/* Add new font */
+@font-face {
+    font-family: "Lato-Black";
+    src: url("../resources/font/Lato/Lato-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato-Regular";
+    src: url("../resources/font/Lato/Lato-Regular.ttf") format("truetype");
+}
+
+/* Add new font */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+#header {
+    display: flex; /* Make header a flex container */
+    
+  
+}
+
+#brand {
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-top: 1vw;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wrapper{
+    clear: both;
+    justify-content: center;
+    width: 60vw;
+    height: 3.4vw;
+    line-height: 3.4vw;
+    background-color: #1F3A5F;
+    /* box shadow */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    border-radius: 50px;
+    margin-top: 1vw;
+    margin-right: 3vw;
+}
+.wrapper nav{
+    display: flex;
+    position: relative;
+}
+.wrapper nav label{
+    display: flex;
+    flex:1;
+    width:100%;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    justify-content: center;
+}
+.wrapper nav label a{
+    position: relative;
+    z-index: -1;
+    color: #333;
+    font-size: 1.5vw;
+    font-weight: 500;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: "Montserrat";
+}
+.wrapper nav label a i{
+    font-size: 1.5vw;
+    margin: 0px 7px;
+}
+.wrapper nav input{
+    display: none;
+}
+.wrapper nav .tab{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    left: 0px;
+    bottom: 0px;
+    /* Gradient Background From Left to Right */
+    background: linear-gradient(to right, #4d648d, #88c6fd);
+    border-radius: 50px;
+    /*  Using Bezier curves to add animated transitions  */
+    transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+.wrapper nav #home:checked ~ label.home a,
+.wrapper nav #overview:checked ~ label.overview a,
+.wrapper nav #data:checked ~ label.data a,
+.wrapper nav #findings:checked ~ label.findings a,
+.wrapper nav #user:checked ~ label.user a{
+    color: #fff;
+    /* Add transition to font colour changes */
+    transition: 0.4s;
+}
+.wrapper nav #overview:checked ~ .tab{
+    left: 20%;
+}
+.wrapper nav #data:checked ~ .tab{
+    left: 40%;
+}
+.wrapper nav #findings:checked ~ .tab{
+    left: 60%;
+}
+.wrapper nav #user:checked ~ .tab{
+    left: 80%;
+}

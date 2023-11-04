@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- 添加地图API的链接 -->
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="0017GroupWork\frontend\css\style_search.css">
-
+    <!-- 添加你的CSS链接 -->
+    <link rel="stylesheet" type="text/css" href="resources\css\style_search.css">
 </head>
 <body>
-    <div id="search-container">
-        <input type="text" id="search-input" placeholder="搜索地点">
+    <div id="header">
+        <div id="brand">
+            <span>RideLink</span>
+        </div>
+        <div class="wrapper">
+            <nav>
+                <input type="radio" name="tab" id="home" checked>
+                <input type="radio" name="tab" id="overview">
+                <input type="radio" name="tab" id="data">
+                <input type="radio" name="tab" id="findings">
+                <input type="radio" name="tab" id="user">
+                <label for="home" class="home" onclick="location.href='#';">
+                    <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
+                </label>
+                <label for="overview" class="overview" onclick="location.href='#';">
+                    <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
+                </label>
+                <label for="data" class="data" onclick="location.href='#';">
+                    <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
+                </label>
+                <label for="findings" class="findings" onclick="location.href='#';">
+                    <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
+                </label>
+                <label for="user" class="user" onclick="location.href='#';">
+                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                </label>
+                <div class="tab"></div>
+            </nav>
+        </div>
     </div>
-    <div id="map-container">
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="搜索地点">
+            <button id="search-button">搜索</button>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="map-container">
+        <!-- 这里是地图内容 -->
         <iframe width='100%' height='400px' src="https://api.mapbox.com/styles/v1/yutong0629/cloc3h4aj013y01qx5kvs2huq.html?title=false&access_token=pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw&zoomwheel=false#13.32/40.70958/-74.00441" title="Monochrome" style="border:none;"></iframe>
+        </div>
     </div>
-    <!-- 引入你的JavaScript文件 -->
-    <script src="0017GroupWork\frontend\js_for_search.js"></script>
 </body>
 </html>
+
