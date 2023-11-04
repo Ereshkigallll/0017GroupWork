@@ -1,3 +1,2 @@
 
-$(function(){alert(2);}
-)
+$(function(){alert(2);})
