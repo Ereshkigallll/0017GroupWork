@@ -66,6 +66,38 @@
                     console.error('地理编码请求失败:', error);
                 });
         });
+        map.on('move', function() {
+            var center = map.getCenter(); // 获取当前地图中心的坐标
+            var latitude = center.lat;
+            var longitude = center.lng;
+
+            // 将坐标信息发送到后端
+            sendCenterCoordinatesToBackend(latitude, longitude);
+        });
+
+        function sendCenterCoordinatesToBackend(latitude, longitude) {
+            // 使用HTTP请求将坐标信息发送到后端
+            fetch('/your-backend-endpoint', {
+                method: 'POST', // 你可以使用合适的HTTP方法
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    latitude: latitude,
+                    longitude: longitude
+                })
+            })
+            .then(response => {
+                // 处理后端响应
+                if (response.ok) {
+                    console.log('坐标信息已发送到后端');
+                } else {
+                    console.error('发送坐标信息时出现错误');
+                }
+            })
+            .catch(error => {
+                console.error('发送坐标信息时出现网络错误:', error);
+            });
     </script>
 </body>
 </html>
