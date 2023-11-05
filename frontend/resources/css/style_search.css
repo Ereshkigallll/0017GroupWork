@@ -26,6 +26,20 @@ body {
     box-sizing: border-box;
 }
 
+.container1 {
+    width: 100%; /* 页面宽度的75% */
+    height: 100%; /* 页面高度的75% */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-right:4cm;
+    padding-bottom:1cm;
+    padding-left:4cm;
+    box-sizing: border-box;
+}
+
 .search-box {
     display: flex;
     align-items: center;
