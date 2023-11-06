@@ -12,6 +12,14 @@ body {
     align-items: stretch;
 }
 
+.box{
+    width: 100vw;
+    height:100vh;
+    overflow: hidden;
+    margin: auto;
+    display: flex;
+}
+
 /* Add new font */
 @font-face {
     font-family: "Lato-Black";
@@ -30,20 +38,30 @@ body {
 }
 
 #header {
+    position:fixed;
+    z-index: 10;
     display: flex; /* Make header a flex container */
     align-items: center; /* Center items vertically */
+    background-color: #0F1C2E;
+    width:100vw;
+    height: 12vh;
+    border-radius: 10px;
 }
 
 #brand {
+    position:fixed;
+    left: 2vw;
+    right: 3vw;
+    top: 0.8vw;
     font-size: 4vw;
     font-family: "Lato-Black";
     color: #FFFFFF;
-    margin-left: 2vw;
-    margin-right: 3vw;
-    margin-top: 1vw;
 }
 
 .wrapper{
+    position:fixed;
+    top: 1.5vw;
+    left: 20.5vw;
     clear: both;
     justify-content: center;
     width: 60vw;
@@ -53,8 +71,6 @@ body {
     /* box shadow */
     box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
     border-radius: 50px;
-    margin-top: 1vw;
-    margin-right: 3vw;
 }
 .wrapper nav{
     display: flex;
@@ -125,18 +141,24 @@ body {
     font-size: 2vw;
     font-family: "Montserrat";
     color: #FFFFFF;
-    margin-left: 110px;
+    margin-left: 3.5vw;
+    margin-top: 6vw;
     align-self: flex-start;
 }
 
-#container {
-    height: 50vh;
-    text-align:center;
+#map {
+    position: relative;
+    z-index: 1;
+    width: 99vw;
+    height: 100vh;
     margin-top: 3vw;
-    border-radius: 50px
+    margin-bottom: 6vw;
 }
 
 #search {
+    position: fixed;
+    top: 0.2vw;
+    right: 5vw;
     display: flex;
     justify-content: center; /* Center the button horizontally */
     align-items: center; /* Center the button vertically */
@@ -169,4 +191,47 @@ body {
 /* Add hover effect for background color */
 .search-btn:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+}
+
+.title{
+    display: flex;
+    align-items: center;
+}
+
+.tab-content{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
+.right,
+.left{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 1vw;
+}
+
+.right{
+    right: 0px
+}
+
+.left{
+    left: 0px
+}
+
+#overview_title{
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    top: 50%;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+#overview_img{
+    text-align: center;
 }
