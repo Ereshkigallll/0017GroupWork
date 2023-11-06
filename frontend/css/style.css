@@ -29,6 +29,11 @@ body {
     src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../resources/font/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+
 #header {
     position:fixed;
     z-index: 10;
@@ -200,6 +205,7 @@ body {
     flex-wrap: wrap;
     align-items: center; 
     justify-content: space-between; 
+    margin-top: 20vh;
 }
 
 .right,
@@ -218,6 +224,13 @@ body {
     left: 0px
 }
 
+.content_text{
+    width: 70%;
+    margin-top: 3vw;
+    font-family: 'Inter-Regular';
+    color: #88c6fd;
+    font-size: 1vw;
+}
 
 
 
@@ -232,8 +245,8 @@ body {
 
 #overview_right {
     display: flex; /* 使用 Flexbox */
+    align-items: center;
     justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
     height: 100vh; /* 确保 div 有高度 */
 }
 
@@ -257,7 +270,6 @@ body {
 
 #data_left {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center children vertically */
     align-items: center; /* Center children horizontally, if needed */
     height: 100vh; /* Set a height to allow centering if the parent's height is defined */
@@ -269,6 +281,7 @@ body {
 
 #data_right {
     display: flex; /* 使用 Flexbox */
+    flex-direction: column; /* Stack children vertically */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     height: 100vh; /* 确保 div 有高度 */
@@ -283,7 +296,7 @@ body {
     margin-left: 3vw;
 }
 
-#data_right img {
+#data_left img {
     max-width: 100%; /* 确保图片不会超出 div 宽度 */
     height: auto; /* 保持图片的原始宽高比 */
 }
