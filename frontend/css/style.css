@@ -12,14 +12,6 @@ body {
     align-items: stretch;
 }
 
-.box{
-    width: 100vw;
-    height:100vh;
-    overflow: hidden;
-    margin: auto;
-    display: flex;
-}
-
 /* Add new font */
 @font-face {
     font-family: "Lato-Black";
@@ -136,25 +128,6 @@ body {
     left: 80%;
 }
 
-/* Set style for real time display */
-#time {
-    font-size: 2vw;
-    font-family: "Montserrat";
-    color: #FFFFFF;
-    margin-left: 3.5vw;
-    margin-top: 6vw;
-    align-self: flex-start;
-}
-
-#map {
-    position: relative;
-    z-index: 1;
-    width: 99vw;
-    height: 100vh;
-    margin-top: 3vw;
-    margin-bottom: 6vw;
-}
-
 #search {
     position: fixed;
     top: 0.2vw;
@@ -193,6 +166,28 @@ body {
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
 }
 
+/* Set style for real time display */
+/* #time {
+    font-size: 2vw;
+    font-family: "Montserrat";
+    color: #FFFFFF;
+    margin-left: 3.5vw;
+    margin-top: 6vw;
+    align-self: flex-start;
+} */
+
+#map {
+    position: relative;
+    z-index: 1;
+    width: 99vw;
+    height: 100vh;
+    margin-top: 3vw;
+}
+
+
+
+
+
 .title{
     display: flex;
     align-items: center;
@@ -201,7 +196,7 @@ body {
 .tab-content{
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     flex-wrap: wrap;
     align-items: center; 
     justify-content: space-between; 
@@ -210,8 +205,8 @@ body {
 .right,
 .left{
     position: absolute;
-    width: 50%;
-    height: 100%;
+    width: 50vw;
+    height: 100vh;
     padding: 1vw;
 }
 
@@ -223,6 +218,25 @@ body {
     left: 0px
 }
 
+
+
+
+
+#overview_left {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally, if needed */
+    height: 100vh; /* Set a height to allow centering if the parent's height is defined */
+}
+
+#overview_right {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 确保 div 有高度 */
+}
+
 #overview_title{
     font-size: 4vw;
     font-family: "Lato-Black";
@@ -232,6 +246,118 @@ body {
     margin-left: 3vw;
 }
 
-#overview_img{
-    text-align: center;
+#overview_right img {
+    max-width: 100%; /* 确保图片不会超出 div 宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+
+
+
+
+
+#data_left {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally, if needed */
+    height: 100vh; /* Set a height to allow centering if the parent's height is defined */
+}
+
+#data-content{
+    margin-top: 10vh;
+}
+
+#data_right {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 确保 div 有高度 */
+}
+
+#data_title{
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    top: 50%;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+#data_right img {
+    max-width: 100%; /* 确保图片不会超出 div 宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+
+
+
+
+
+#finding_left {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally, if needed */
+    height: 100vh; /* Set a height to allow centering if the parent's height is defined */
+}
+
+#finding-content{
+    margin-top: 10vh;
+}
+
+#finding_right {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 确保 div 有高度 */
+}
+
+#finding_title{
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    top: 50%;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+#finding_right img {
+    max-width: 100%; /* 确保图片不会超出 div 宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
+}
+
+
+
+
+
+#user_left {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally, if needed */
+    height: 100vh; /* Set a height to allow centering if the parent's height is defined */
+}
+
+#user-content{
+    margin-top: 10vh;
+}
+
+#user_right {
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh; /* 确保 div 有高度 */
+}
+
+#user_title{
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    top: 50%;
+    margin-top: 3vw;
+    margin-left: 3vw;
+}
+
+#user_right img {
+    max-width: 100%; /* 确保图片不会超出 div 宽度 */
+    height: auto; /* 保持图片的原始宽高比 */
 }

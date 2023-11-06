@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- 添加你的CSS链接 -->
+    <link rel="stylesheet" type="text/css" href="./frontend/css/style_search.css">
+     <!-- 引入Mapbox的JavaScript API -->
+     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+     <!-- 引入Mapbox的CSS文件 -->
+     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+     <!-- 引入MapboxGeocoder插件 -->
+     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+     <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+      <!-- 引入Mapbox的JavaScript API -->
+      <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+      <!--<script src='js\js_for_search.js'></script>-->
+     
+</head>
+<body>
+    <div id="header">
+        <div id="brand">
+            <span>RideLink</span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="search-input" placeholder="搜索地点">
+            <button id="search-button">搜索</button>
+        </div>
+    </div>
+    <div class="container1">
+        <div id="map-container">
+            <div id="map-container" style="width: 75%; height: 600px;"></div>
+        </div>
+    </div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw'; // 替换为你自己的Mapbox访问令牌
+
+        var map = new mapboxgl.Map({
+            container: 'map-container',
+            style: 'mapbox://styles/mapbox/streets-v11', // 替换为你选择的地图样式
+            center: [-75, 40], // 默认地图中心坐标
+            zoom: 9 // 默认缩放级别
+        });
+
+        document.getElementById('search-button').addEventListener('click', function () {
+            var searchTerm = document.getElementById('search-input').value;
+
+            // 发送地理编码请求到Mapbox API
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${searchTerm}.json?access_token=${mapboxgl.accessToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.features.length > 0) {
+                        // 获取地理编码结果中的坐标
+                        var coordinates = data.features[0].center;
+
+                        // 在地图上添加标记
+                        new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+
+                        // 将地图中心设置为搜索结果的位置
+                        map.setCenter(coordinates);
+                    } else {
+                        alert('未找到地点');
+                    }
+                })
+                .catch(error => {
+                    console.error('地理编码请求失败:', error);
+                });
+        });
+        map.on('move', function() {
+            var center = map.getCenter(); // 获取当前地图中心的坐标
+            var latitude = center.lat;
+            var longitude = center.lng;
+
+            // 将坐标信息发送到后端
+            sendCenterCoordinatesToBackend(latitude, longitude);
+        });
+
+        function sendCenterCoordinatesToBackend(latitude, longitude) {
+            // 使用HTTP请求将坐标信息发送到后端
+            fetch('/your-backend-endpoint', {
+                method: 'POST', // 你可以使用合适的HTTP方法
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    latitude: latitude,
+                    longitude: longitude
+                })
+            })
+            .then(response => {
+                // 处理后端响应
+                if (response.ok) {
+                    console.log('坐标信息已发送到后端');
+                } else {
+                    console.error('发送坐标信息时出现错误');
+                }
+            })
+            .catch(error => {
+                console.error('发送坐标信息时出现网络错误:', error);
+            });
+        }
+    </script>
+</body>
+</html>
+
