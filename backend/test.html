@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Database</title>
+</head>
+<body>
+  <button id="fetchData">Acquire</button>
+  <div id="result"></div>
+  <script>
+    document.getElementById('fetchData').addEventListener('click', function () {
+      fetch('http://localhost:3000/data')
+        .then(response => response.json())
+        .then(data => {
+          // 处理从服务器返回的数据
+          document.getElementById('result').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('请求失败: ' + error));
+    });
+  </script>
+</body>
+</html>
