@@ -19,11 +19,52 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
-    padding-right:4cm;
-    padding-bottom:1cm;
-    padding-left:4cm;
+    /* 上下边距为页面高度的1/8 */
+    padding-bottom: 5vh;
+    /* 左右边距为页面宽度的1/8 */
+    padding-left: 12.5vw;
+    padding-right: 12.5vw;
     box-sizing: border-box;
+}
+
+#slogo {
+    font-size: 2.2vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-input {
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 10px; /* 圆角半径，可以根据需要调整 */
+    padding: 5px; /* 内边距，可根据需要调整 */
+    width: 20vh; /* 输入框的宽度，可根据需要调整 */
+    /* box shadow */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    border-radius: 50px;
+    margin-top: 1vw;
+    margin-right: 3vw;
+}
+
+#search-input:hover {
+    border: 1px solid #555; /* 修改边框颜色 */
+}
+
+#search-button{
+    border: 1px solid #ccc; /* 添加边框 */
+    border-radius: 10px; /* 圆角半径，可以根据需要调整 */
+    padding: 5px; /* 内边距，可根据需要调整 */
+    /* box shadow */
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.25);
+    border-radius: 50px;
+    margin-top: 1vw;
+    margin-left: 1vw;
 }
 
 .container1 {
@@ -33,10 +74,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
-    padding-right:4cm;
-    padding-bottom:1cm;
-    padding-left:4cm;
+    /* 上下边距为页面高度的1/8 */
+    padding-bottom: 12.5vh;
+
+    /* 左右边距为页面宽度的1/8 */
+    padding-left: 12.5vw;
+    padding-right: 12.5vw;
     box-sizing: border-box;
 }
 
