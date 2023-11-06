@@ -56,7 +56,7 @@ app.get('/homeLocation', (req, res) => {
 
 
   // Execute query
-  db.query('SELECT *, ST_Distance_Sphere(pickup_location, POINT(?,?)) AS distance ' +
+  db.query('SELECT pickup_longitude, pickup_latitude, ST_Distance_Sphere(pickup_location, POINT(?,?)) AS distance ' +
     'FROM `trip` WHERE ' +
     'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? and `Hour` =' + hours + ' and time_group = ' + time_group
     , [lon, lat, lon, lat, radius], (err, rows) => {
