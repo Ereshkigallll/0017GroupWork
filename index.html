@@ -14,8 +14,8 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
     <script type="text/javascript" src="./frontend/js/database.js"></script>
-    <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
-    <script src="./frontend/js/database.js"></script>
+    <!-- <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script> -->
+    
 </head>
 
 <body>
@@ -86,7 +86,7 @@
                 map.setPaintProperty('water', 'fill-color', '#1F3A5F');
             });
 
-
+            window.myMap = map;
         </script>
     </div>
 
@@ -208,102 +208,5 @@
 </body>
 
 </html>
-
-<script type="text/javascript">
-
-    var preCenter = map.getCenter();
-    var preradius = null;
-
-
-    var features = null;
-
-
-    map.on('move', function () {
-        var bounds = map.getBounds();   // get the coordinates of bounds
-        var ne = bounds.getNorthEast(); // get the northeast coordinates of the bounding box
-        var sw = bounds.getSouthWest(); // get the southwest corner coordinates of the bounding box
-        var radius = Math.floor(haversineDistance(ne.lat, ne.lng, sw.lat, sw.lng) / 2);
-
-        var center = map.getCenter();
-        if (ifGetLocations(center, radius)) {
-            console.log("change!!!", preCenter, preradius);
-            var lng = center.lng; // get the longitude of the center
-            var lat = center.lat;  // get the latitude of the center
-            //fetch
-            var url = `http://localhost:3000/homeLocation?lat=${lat}&lon=${lng}&radius=${preradius}`
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    // 处理从服务器返回的数据
-                    var JsonData = JSON.stringify(data, null, 2);
-                   console.log(JsonData) ;
-
-                })
-                .catch(error => console.error('请求失败: ' + error));
-
-        }
-
-        console.log('radius(metre):', radius);
-
-    });
-
-
-
-
-
-    var geojsonData = {
-        type: 'FeatureCollection',
-        features: features
-    };
-
-
-
-    /*In order to save server resources and avoid sending requests 
-    **to the server as a result of minor changes, 
-    **requests are sent to the nodeJs server only when the current 
-    **map size changes or the location of the center point in the map 
-    **changes by more than 0.25 of the original radius 
-    **(distance from the center point to the four corners)
-    */
-    function ifGetLocations(center, rad) {
-        if (preradius == null || preradius !== rad) {
-            console.log('radius change')
-            preradius = rad;
-            return true;
-        }
-        var distance = Math.floor(haversineDistance(center.lat, center.lng, preCenter.lat, preCenter.lng))
-        if (4 * distance > rad) {
-            console.log('center change')
-            preCenter = center;
-            return true;
-        }
-        return false
-
-    }
-
-
-    function haversineDistance(lat1, lon1, lat2, lon2) {
-        // 将经纬度从度转换为弧度
-        lat1 = toRadians(lat1);
-        lon1 = toRadians(lon1);
-        lat2 = toRadians(lat2);
-        lon2 = toRadians(lon2);
-
-        // Haversine 公式计算距离
-        var dlat = lat2 - lat1;
-        var dlon = lon2 - lon1;
-        var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
-            Math.cos(lat1) * Math.cos(lat2) *
-            Math.sin(dlon / 2) * Math.sin(dlon / 2);
-        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        var radius = 6371000; // 地球半径，单位为米
-        return radius * c;
-    }
-
-    function toRadians(degrees) {
-        return degrees * (Math.PI / 180);
-    }
-
-
-
-</script>
+<script src="./frontend/js/getCoords.js"></script>
+<!-- <script type="text/javascript"></script> -->
