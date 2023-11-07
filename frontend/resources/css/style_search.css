@@ -12,6 +12,21 @@ body {
     align-items: stretch;
 }
 
+
+
+#slogo {
+    font-size: 2.2vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-top: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     width: 100%; /* 页面宽度的75% */
     height: 100%; /* 页面高度的75% */
@@ -25,19 +40,6 @@ body {
     padding-left: 12.5vw;
     padding-right: 12.5vw;
     box-sizing: border-box;
-}
-
-#slogo {
-    font-size: 2.2vw;
-    font-family: "Lato-Black";
-    color: #FFFFFF;
-    margin-left: 2vw;
-    margin-right: 3vw;
-    margin-top: 1vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 #search-input {

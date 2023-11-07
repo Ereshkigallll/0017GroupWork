@@ -61,6 +61,12 @@
                         // 在地图上添加标记
                         new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
 
+                        // 获取地图的当前中心位置
+                        var mapCenter = map.getCenter();
+
+                        // 输出地图中心位置的经纬度
+                        console.log('地图中心坐标:', mapCenter.lng, mapCenter.lat);
+
                         // 将地图中心设置为搜索结果的位置
                         map.setCenter(coordinates);
                     } else {
