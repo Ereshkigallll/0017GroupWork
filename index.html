@@ -213,6 +213,11 @@
 
     var preCenter = map.getCenter();
     var preradius = null;
+
+
+    var features = null;
+
+
     map.on('move', function () {
         var bounds = map.getBounds();   // get the coordinates of bounds
         var ne = bounds.getNorthEast(); // get the northeast coordinates of the bounding box
@@ -222,18 +227,36 @@
         var center = map.getCenter();
         if (ifGetLocations(center, radius)) {
             console.log("change!!!", preCenter, preradius);
-            var longitude = center.lng; // get the longitude of the center
-            var latitude = center.lat;  // get the latitude of the center
+            var lng = center.lng; // get the longitude of the center
+            var lat = center.lat;  // get the latitude of the center
             //fetch
+            var url = `http://localhost:3000/homeLocation?lat=${lat}&lon=${lng}&radius=${preradius}`
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // 处理从服务器返回的数据
+                    var JsonData = JSON.stringify(data, null, 2);
+                   console.log(JsonData) ;
+
+                })
+                .catch(error => console.error('请求失败: ' + error));
+
         }
-
-
 
         console.log('radius(metre):', radius);
 
-
-
     });
+
+
+
+
+
+    var geojsonData = {
+        type: 'FeatureCollection',
+        features: features
+    };
+
+
 
     /*In order to save server resources and avoid sending requests 
     **to the server as a result of minor changes, 
