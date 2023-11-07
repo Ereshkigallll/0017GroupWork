@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>RideLink - Boost Your Trip</title>
-        <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-        rel="stylesheet">
-        <link rel="icon" href ="./frontend/resources/images/web_logo.ico">
-        <!-- DeckGL Library -->
-        <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
-        <!--MapBox 2.10.0-->
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
-        <script type="text/javascript" src="./frontend/js/database.js"></script>
-        <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
-        <script src="./frontend/js/database.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>RideLink - Boost Your Trip</title>
+    <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./frontend/resources/images/web_logo.ico">
+    <!-- DeckGL Library -->
+    <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+    <!--MapBox 2.10.0-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
-    <body>
-        <div id="header">
-            <div id="brand">
-                <span>RideLink</span>
-            </div>
-            <div class="wrapper">
-                <nav>
-                    <input type="radio" name="tab" id="home" checked>
-                    <input type="radio" name="tab" id="overview">
-                    <input type="radio" name="tab" id="data">
-                    <input type="radio" name="tab" id="findings">
-                    <input type="radio" name="tab" id="user">
-                    <label for="home" class="home" onclick=scrollToTop();>
-                        <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
-                    </label>
-                    <label for="overview" class="overview" onclick="scrollToElement('overview-content');">
-                        <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
-                    </label>
-                    <label for="data" class="data" onclick="scrollToElement('data-content');">
-                        <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
-                    </label>
-                    <label for="findings" class="findings" onclick="scrollToElement('finding-content');">
-                        <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
-                    </label>
-                    <label for="user" class="user" onclick="scrollToElement('user-content');">
-                        <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
-                    </label>
-                    <div class="tab"></div>
-                </nav>
-            </div>
+    <script type="text/javascript" src="./frontend/js/database.js"></script>
+    <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
+    <script src="./frontend/js/database.js"></script>
+</head>
 
-            <div id="search">
-                <button type="button" class="search-btn">
-                    <i class="fa fa-search"></i> Search
-                </button>
-            </div>
+<body>
+    <div id="header">
+        <div id="brand">
+            <span>RideLink</span>
+        </div>
+        <div class="wrapper">
+            <nav>
+                <input type="radio" name="tab" id="home" checked>
+                <input type="radio" name="tab" id="overview">
+                <input type="radio" name="tab" id="data">
+                <input type="radio" name="tab" id="findings">
+                <input type="radio" name="tab" id="user">
+                <label for="home" class="home" onclick=scrollToTop();>
+                    <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
+                </label>
+                <label for="overview" class="overview" onclick="scrollToElement('overview-content');">
+                    <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
+                </label>
+                <label for="data" class="data" onclick="scrollToElement('data-content');">
+                    <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
+                </label>
+                <label for="findings" class="findings" onclick="scrollToElement('finding-content');">
+                    <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
+                </label>
+                <label for="user" class="user" onclick="scrollToElement('user-content');">
+                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                </label>
+                <div class="tab"></div>
+            </nav>
         </div>
 
-        <div id="home-content" class="tab-content" style="display:block">
-            <!-- <div id="time"></div>
+        <div id="search">
+            <button type="button" class="search-btn">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>
+    </div>
+
+    <div id="home-content" class="tab-content" style="display:block">
+        <!-- <div id="time"></div>
             <script>
                 const timeDiv = document.getElementById('time'); // To get element
                 // Create a function to get time
@@ -71,137 +71,216 @@
                 setInterval(updateTime, 1000); // update time per second
             </script> -->
 
-            <div id='map'></div>
-            <script>
-                mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw';
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    center: [-74.0060, 40.7128],
-                    style: 'mapbox://styles/mapbox/dark-v11',
-                    zoom: 15
-                });
-
-                map.on('load', function () {
-                    // 更改水体颜色为蓝色
-                    map.setPaintProperty('water', 'fill-color', '#1F3A5F');
-                });
-            </script>
-        </div>
-
-        <div id="overview-content" class="tab-content" style="display:block">
-            <div id="overview_left" class="left">
-                <div id="overview_title" class="title">
-                    <span>Overview</span>
-                </div>
-                <div id="overview_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
-            </div>
-
-            <div id="overview_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
-            </div>
-        </div>
-
-        <div id="data-content" class="tab-content" style="display:block">
-            <div id="data_left" class="left">
-                <div id="data_title" class="title">
-                    <span>Data</span>
-                </div>
-                <div id="data_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
-            </div>
-
-            <div id="data_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
-            </div>
-        </div>
-
-        <div id="finding-content" class="tab-content" style="display:block">
-            <div id="finding_left" class="left">
-                <div id="finding_title" class="title">
-                    <span>Findings</span>
-                </div>
-                <div id="finding_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
-            </div>
-
-            <div id="finding_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
-            </div>
-        </div>
-
-        <div id="user-content" class="tab-content" style="display:block">
-            <div id="user_left" class="left">
-                <div id="user_title" class="title">
-                    <span>Users</span>
-                </div>
-                <div id="user_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
-            </div>
-
-            <div id="user_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
-            </div>
-        </div>
-
-        <script type="text/javascript">
-            document.addEventListener('DOMContentLoaded', function() {
-                var searchButton = document.querySelector('.search-btn');
-                searchButton.addEventListener('click', function() {
-                    window.location.href = './search.html';
-                });
+        <div id='map'></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                center: [-74.0060, 40.7128],
+                style: 'mapbox://styles/mapbox/dark-v11',
+                zoom: 15
             });
 
-            function scrollToTop() {
-                window.scrollTo({
-                    top: 0,
-                    left: 0,
-                    behavior: 'smooth'
-                });
-            }
+            map.on('load', function () {
+                // 更改水体颜色为蓝色
+                map.setPaintProperty('water', 'fill-color', '#1F3A5F');
+            });
 
-            function scrollToElement(elementId) {
-                var element = document.getElementById(elementId);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
+
         </script>
-    </body>
+    </div>
+
+    <div id="overview-content" class="tab-content" style="display:block">
+        <div id="overview_left" class="left">
+            <div id="overview_title" class="title">
+                <span>Overview</span>
+            </div>
+            <div id="overview_text">
+                <p>
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                </p>
+            </div>
+        </div>
+
+        <div id="overview_right" class="right">
+            <img src="./frontend/resources/images/example.png" alt="test">
+        </div>
+    </div>
+
+    <div id="data-content" class="tab-content" style="display:block">
+        <div id="data_left" class="left">
+            <div id="data_title" class="title">
+                <span>Data</span>
+            </div>
+            <div id="data_text">
+                <p>
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                </p>
+            </div>
+        </div>
+
+        <div id="data_right" class="right">
+            <img src="./frontend/resources/images/example.png" alt="test">
+        </div>
+    </div>
+
+    <div id="finding-content" class="tab-content" style="display:block">
+        <div id="finding_left" class="left">
+            <div id="finding_title" class="title">
+                <span>Findings</span>
+            </div>
+            <div id="finding_text">
+                <p>
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                </p>
+            </div>
+        </div>
+
+        <div id="finding_right" class="right">
+            <img src="./frontend/resources/images/example.png" alt="test">
+        </div>
+    </div>
+
+    <div id="user-content" class="tab-content" style="display:block">
+        <div id="user_left" class="left">
+            <div id="user_title" class="title">
+                <span>Users</span>
+            </div>
+            <div id="user_text">
+                <p>
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    这里是您想添加的一段描述性文字，它会显示在标题下方。
+                </p>
+            </div>
+        </div>
+
+        <div id="user_right" class="right">
+            <img src="./frontend/resources/images/example.png" alt="test">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            var searchButton = document.querySelector('.search-btn');
+            searchButton.addEventListener('click', function () {
+                window.location.href = './search.html';
+            });
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function scrollToElement(elementId) {
+            var element = document.getElementById(elementId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+</body>
+
 </html>
+
+<script type="text/javascript">
+
+    var preCenter = map.getCenter();
+    var preradius = null;
+    map.on('move', function () {
+        var bounds = map.getBounds();   // get the coordinates of bounds
+        var ne = bounds.getNorthEast(); // get the northeast coordinates of the bounding box
+        var sw = bounds.getSouthWest(); // get the southwest corner coordinates of the bounding box
+        var radius = Math.floor(haversineDistance(ne.lat, ne.lng, sw.lat, sw.lng) / 2);
+
+        var center = map.getCenter();
+        if (ifGetLocations(center, radius)) {
+            console.log("change!!!", preCenter, preradius);
+            var longitude = center.lng; // get the longitude of the center
+            var latitude = center.lat;  // get the latitude of the center
+            //fetch
+        }
+
+
+
+        console.log('radius(metre):', radius);
+
+
+
+    });
+
+    /*In order to save server resources and avoid sending requests 
+    **to the server as a result of minor changes, 
+    **requests are sent to the nodeJs server only when the current 
+    **map size changes or the location of the center point in the map 
+    **changes by more than 0.25 of the original radius 
+    **(distance from the center point to the four corners)
+    */
+    function ifGetLocations(center, rad) {
+        if (preradius == null || preradius !== rad) {
+            console.log('radius change')
+            preradius = rad;
+            return true;
+        }
+        var distance = Math.floor(haversineDistance(center.lat, center.lng, preCenter.lat, preCenter.lng))
+        if (4 * distance > rad) {
+            console.log('center change')
+            preCenter = center;
+            return true;
+        }
+        return false
+
+    }
+
+
+    function haversineDistance(lat1, lon1, lat2, lon2) {
+        // 将经纬度从度转换为弧度
+        lat1 = toRadians(lat1);
+        lon1 = toRadians(lon1);
+        lat2 = toRadians(lat2);
+        lon2 = toRadians(lon2);
+
+        // Haversine 公式计算距离
+        var dlat = lat2 - lat1;
+        var dlon = lon2 - lon1;
+        var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
+            Math.cos(lat1) * Math.cos(lat2) *
+            Math.sin(dlon / 2) * Math.sin(dlon / 2);
+        var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        var radius = 6371000; // 地球半径，单位为米
+        return radius * c;
+    }
+
+    function toRadians(degrees) {
+        return degrees * (Math.PI / 180);
+    }
+
+
+
+</script>
