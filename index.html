@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>RideLink - Boost Your Trip</title>
-        <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
-        rel="stylesheet">
-        <link rel="icon" href ="./frontend/resources/images/web_logo.ico">
-        <!-- DeckGL Library -->
-        <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
-        <!--MapBox 2.10.0-->
-        <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
-        <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
-        <script type="text/javascript" src="./frontend/js/database.js"></script>
-        <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
-        <script src="./frontend/js/database.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>RideLink - Boost Your Trip</title>
+    <link rel="stylesheet" type="text/css" href="./frontend/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./frontend/resources/images/web_logo.ico">
+    <!-- DeckGL Library -->
+    <script src="https://unpkg.com/deck.gl@latest/dist.min.js"></script>
+    <!--MapBox 2.10.0-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
-    <body>
-        <div id="header">
-            <div id="brand">
-                <span>RideLink</span>
-            </div>
-            <div class="wrapper">
-                <nav>
-                    <input type="radio" name="tab" id="home" checked>
-                    <input type="radio" name="tab" id="overview">
-                    <input type="radio" name="tab" id="data">
-                    <input type="radio" name="tab" id="findings">
-                    <input type="radio" name="tab" id="user">
-                    <label for="home" class="home" onclick=scrollToTop();>
-                        <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
-                    </label>
-                    <label for="overview" class="overview" onclick="scrollToElement('overview-content');">
-                        <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
-                    </label>
-                    <label for="data" class="data" onclick="scrollToElement('data-content');">
-                        <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
-                    </label>
-                    <label for="findings" class="findings" onclick="scrollToElement('finding-content');">
-                        <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
-                    </label>
-                    <label for="user" class="user" onclick="scrollToElement('user-content');">
-                        <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
-                    </label>
-                    <div class="tab"></div>
-                </nav>
-            </div>
+    <script type="text/javascript" src="./frontend/js/database.js"></script>
+    <!-- <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script> -->
+    
+</head>
 
-            <div id="search">
-                <button type="button" class="search-btn">
-                    <i class="fa fa-search"></i> Search
-                </button>
-            </div>
+<body>
+    <div id="header">
+        <div id="brand">
+            <span>RideLink</span>
+        </div>
+        <div class="wrapper">
+            <nav>
+                <input type="radio" name="tab" id="home" checked>
+                <input type="radio" name="tab" id="overview">
+                <input type="radio" name="tab" id="data">
+                <input type="radio" name="tab" id="findings">
+                <input type="radio" name="tab" id="user">
+                <label for="home" class="home" onclick=scrollToTop();>
+                    <a><i class="fa fa-home" style="color: #ffffff;" aria-hidden="true"></i>Home</a>
+                </label>
+                <label for="overview" class="overview" onclick="scrollToElement('overview-content');">
+                    <a><i class="fa-solid fa-earth-europe" style="color: #ffffff;"></i>Overview</a>
+                </label>
+                <label for="data" class="data" onclick="scrollToElement('data-content');">
+                    <a><i class="fa fa-file-excel" style="color: #ffffff;" aria-hidden="true"></i>Data</a>
+                </label>
+                <label for="findings" class="findings" onclick="scrollToElement('finding-content');">
+                    <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
+                </label>
+                <label for="user" class="user" onclick="scrollToElement('user-content');">
+                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                </label>
+                <div class="tab"></div>
+            </nav>
         </div>
 
-        <div id="home-content" class="tab-content" style="display:block">
-            <!-- <div id="time"></div>
+        <div id="search">
+            <button type="button" class="search-btn">
+                <i class="fa fa-search"></i> Search
+            </button>
+        </div>
+    </div>
+
+    <div id="home-content" class="tab-content" style="display:block">
+        <!-- <div id="time"></div>
             <script>
                 const timeDiv = document.getElementById('time'); // To get element
                 // Create a function to get time
@@ -71,17 +71,17 @@
                 setInterval(updateTime, 1000); // update time per second
             </script> -->
 
-            <div id='map'></div>
-            <script>
-                mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw';
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    center: [-74.0060, 40.7128],
-                    style: 'mapbox://styles/mapbox/dark-v11',
-                    zoom: 15
-                });
+        <div id='map'></div>
+        <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoieXV0b25nMDYyOSIsImEiOiJjbG9jM2IwNm0weWxqMmlubjB4b2V2ZWF5In0.DvGhBLaLcFQpyalSaXaYiw';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                center: [-74.0060, 40.7128],
+                style: 'mapbox://styles/mapbox/dark-v11',
+                zoom: 15
+            });
 
-                map.on('load', function () {
+map.on('load', function () {
                     // 更改水体颜色为蓝色
                     map.setPaintProperty('water', 'fill-color', '#1F3A5F');
                 });
@@ -203,3 +203,5 @@
         </script>
     </body>
 </html>
+<script src="./frontend/js/getCoords.js"></script>
+<!-- <script type="text/javascript"></script> -->
