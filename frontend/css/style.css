@@ -42,7 +42,7 @@ body {
     background-color: #0F1C2E;
     width:100vw;
     height: 12vh;
-    border-radius: 10px;
+    border-radius: 17px;
 }
 
 #brand {
@@ -205,7 +205,6 @@ body {
     flex-wrap: wrap;
     align-items: center; 
     justify-content: space-between; 
-    margin-top: 20vh;
 }
 
 .right,
@@ -250,7 +249,9 @@ body {
     height: 100vh; /* 确保 div 有高度 */
 }
 
-#overview_title{
+#overview_title_1,
+#overview_title_2,
+#overview_title_3{
     font-size: 4vw;
     font-family: "Lato-Black";
     color: #FFFFFF;
@@ -259,11 +260,11 @@ body {
     margin-left: 3vw;
 }
 
-#overview_right img {
-    max-width: 100%; /* 确保图片不会超出 div 宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
+#overview_text{
+    text-align: center;
+    font-size: 1vw;
+    line-height: 4vh;
 }
-
 
 
 
@@ -276,7 +277,7 @@ body {
 }
 
 #data-content{
-    margin-top: 10vh;
+    margin-top: 6vh;
 }
 
 #data_right {
