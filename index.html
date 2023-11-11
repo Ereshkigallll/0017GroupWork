@@ -111,7 +111,7 @@ map.on('load', function () {
 
         <div id="data-content" class="tab-content" style="display:block">
             <div id="data_left" class="left">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <img src="./frontend/resources/images/data_fare.png" alt="data overview">
             </div>
 
             <div id="data_right" class="right">
@@ -119,15 +119,40 @@ map.on('load', function () {
                     <span>Data</span>
                 </div>
                 <div id="data_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
+                    <div class="data_text_inner">
+                        <span>
+                            The raw dataset contains  
+                            <span class="emphasized-data">55 million</span> rows of data,
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            We randomly sampled 
+                            <span class="emphasized-data">100000</span> rows of data from it.
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            After removing data with taxi fare <span class="emphasized-data">less than 0</span>, 
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            And deleteing data point <span class="emphasized-data">outside</span> New York City. 
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            There are 
+                            <span class="emphasized-data">97,856</span> rows of valid data,
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            A validity ratio of 
+                            <span class="emphasized-data">97.86%</span>.
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -138,20 +163,47 @@ map.on('load', function () {
                     <span>Findings</span>
                 </div>
                 <div id="finding_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">largest number</span>
+                            of passengers take a taxi in 
+                            <span class="emphasized-data">Manhattan</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">peak</span>
+                            of passenger journeys occurs  
+                            <span class="emphasized-data">between 7-8pm</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">lowest</span>
+                            point of passenger travel occurs   
+                            <span class="emphasized-data">between 4-5am</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            Average single journey prices are 
+                            <span class="emphasized-data">lowest</span> 
+                            <span class="emphasized-data">between 7-8pm</span>. 
+                        </span>
+                    </div>
+                </div>
+                <div id="readmore">
+                    <button type="button" class="readmore-btn">
+                        <i class="fa-solid fa-angle-right"></i> Read More
+                    </button>
                 </div>
             </div>
 
             <div id="finding_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <img src="./frontend/resources/images/finding_main.png" alt="finding_main">
             </div>
         </div>
 
