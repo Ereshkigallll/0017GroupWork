@@ -29,6 +29,11 @@ body {
     src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../resources/font/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+
 #header {
     position:fixed;
     z-index: 10;
@@ -37,7 +42,7 @@ body {
     background-color: #0F1C2E;
     width:100vw;
     height: 12vh;
-    border-radius: 10px;
+    border-radius: 17px;
 }
 
 #brand {
@@ -218,6 +223,13 @@ body {
     left: 0px
 }
 
+.content_text{
+    width: 70%;
+    margin-top: 3vw;
+    font-family: 'Inter-Regular';
+    color: #88c6fd;
+    font-size: 1vw;
+}
 
 
 
@@ -232,12 +244,14 @@ body {
 
 #overview_right {
     display: flex; /* 使用 Flexbox */
+    align-items: center;
     justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
     height: 100vh; /* 确保 div 有高度 */
 }
 
-#overview_title{
+#overview_title_1,
+#overview_title_2,
+#overview_title_3{
     font-size: 4vw;
     font-family: "Lato-Black";
     color: #FFFFFF;
@@ -246,29 +260,29 @@ body {
     margin-left: 3vw;
 }
 
-#overview_right img {
-    max-width: 100%; /* 确保图片不会超出 div 宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
+#overview_text{
+    text-align: center;
+    font-size: 1vw;
+    line-height: 4vh;
 }
-
 
 
 
 
 #data_left {
     display: flex;
-    flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center children vertically */
     align-items: center; /* Center children horizontally, if needed */
     height: 100vh; /* Set a height to allow centering if the parent's height is defined */
 }
 
 #data-content{
-    margin-top: 10vh;
+    margin-top: 6vh;
 }
 
 #data_right {
     display: flex; /* 使用 Flexbox */
+    flex-direction: column; /* Stack children vertically */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
     height: 100vh; /* 确保 div 有高度 */
@@ -283,7 +297,7 @@ body {
     margin-left: 3vw;
 }
 
-#data_right img {
+#data_left img {
     max-width: 100%; /* 确保图片不会超出 div 宽度 */
     height: auto; /* 保持图片的原始宽高比 */
 }

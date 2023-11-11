@@ -80,132 +80,127 @@
                 zoom: 15
             });
 
-            map.on('load', function () {
-                // 更改水体颜色为蓝色
-                map.setPaintProperty('water', 'fill-color', '#1F3A5F');
+map.on('load', function () {
+                    // 更改水体颜色为蓝色
+                    map.setPaintProperty('water', 'fill-color', '#1F3A5F');
+                });
+            </script>
+        </div>
+
+        <div id="overview-content" class="tab-content" style="display:block">
+            <div id="overview_left">
+                <div id="overview_title_1" class="title">
+                    <span>Ride smarter, not harder.</span>
+                </div>
+                <div id="overview_title_2" class="title">
+                    <span>Reduce carbon footprint with every trip.</span>
+                </div>
+                <div id="overview_title_3" class="title">
+                    <span>Connect better, preserve our planet."</span>
+                </div>
+                <div id="overview_text" class="content_text">
+                    <p>
+                        Our platform harnesses the power of New York's taxi data to streamline urban transportation. <br>
+                        By guiding drivers and passengers to optimal locations, we cut down on idle cruising, reducing fuel use and emissions. <br>
+                        Every trip moves us toward a greener city by empowering eco-friendly travel choices. Join our drive to a sustainable future. <br>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="data-content" class="tab-content" style="display:block">
+            <div id="data_left" class="left">
+                <img src="./frontend/resources/images/example.png" alt="test">
+            </div>
+
+            <div id="data_right" class="right">
+                <div id="data_title" class="title">
+                    <span>Data</span>
+                </div>
+                <div id="data_text" class="content_text">
+                    <p>
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="finding-content" class="tab-content" style="display:block">
+            <div id="finding_left" class="left">
+                <div id="finding_title" class="title">
+                    <span>Findings</span>
+                </div>
+                <div id="finding_text" class="content_text">
+                    <p>
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    </p>
+                </div>
+            </div>
+
+            <div id="finding_right" class="right">
+                <img src="./frontend/resources/images/example.png" alt="test">
+            </div>
+        </div>
+
+        <div id="user-content" class="tab-content" style="display:block">
+            <div id="user_left" class="left">
+                <div id="user_title" class="title">
+                    <span>Users</span>
+                </div>
+                <div id="user_text" class="content_text">
+                    <p>
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                        这里是您想添加的一段描述性文字，它会显示在标题下方。
+                    </p>
+                </div>
+            </div>
+
+            <div id="user_right" class="right">
+                <img src="./frontend/resources/images/example.png" alt="test">
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.search-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './search.html';
+                });
             });
 
-            window.myMap = map;
-        </script>
-    </div>
-
-    <div id="overview-content" class="tab-content" style="display:block">
-        <div id="overview_left" class="left">
-            <div id="overview_title" class="title">
-                <span>Overview</span>
-            </div>
-            <div id="overview_text">
-                <p>
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                </p>
-            </div>
-        </div>
-
-        <div id="overview_right" class="right">
-            <img src="./frontend/resources/images/example.png" alt="test">
-        </div>
-    </div>
-
-    <div id="data-content" class="tab-content" style="display:block">
-        <div id="data_left" class="left">
-            <div id="data_title" class="title">
-                <span>Data</span>
-            </div>
-            <div id="data_text">
-                <p>
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                </p>
-            </div>
-        </div>
-
-        <div id="data_right" class="right">
-            <img src="./frontend/resources/images/example.png" alt="test">
-        </div>
-    </div>
-
-    <div id="finding-content" class="tab-content" style="display:block">
-        <div id="finding_left" class="left">
-            <div id="finding_title" class="title">
-                <span>Findings</span>
-            </div>
-            <div id="finding_text">
-                <p>
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                </p>
-            </div>
-        </div>
-
-        <div id="finding_right" class="right">
-            <img src="./frontend/resources/images/example.png" alt="test">
-        </div>
-    </div>
-
-    <div id="user-content" class="tab-content" style="display:block">
-        <div id="user_left" class="left">
-            <div id="user_title" class="title">
-                <span>Users</span>
-            </div>
-            <div id="user_text">
-                <p>
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    这里是您想添加的一段描述性文字，它会显示在标题下方。
-                </p>
-            </div>
-        </div>
-
-        <div id="user_right" class="right">
-            <img src="./frontend/resources/images/example.png" alt="test">
-        </div>
-    </div>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function () {
-            var searchButton = document.querySelector('.search-btn');
-            searchButton.addEventListener('click', function () {
-                window.location.href = './search.html';
-            });
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        function scrollToElement(elementId) {
-            var element = document.getElementById(elementId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    left: 0,
+                    behavior: 'smooth'
+                });
             }
-        }
-    </script>
-</body>
 
+            function scrollToElement(elementId) {
+                var element = document.getElementById(elementId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        </script>
+    </body>
 </html>
 <script src="./frontend/js/updateCenAndRad.js"></script>
 <script src="./frontend/js/getCoords.js"></script>
