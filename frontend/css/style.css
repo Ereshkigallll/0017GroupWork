@@ -149,7 +149,7 @@ body {
     width: 10vw;
     margin-top: 0.9vw;
     background: transparent; /* Transparent background */
-    border: 7px solid #FFFFFF; /* White border */
+    border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
     font-family: "Montserrat", sans-serif; /* Font family */
@@ -212,7 +212,6 @@ body {
     position: absolute;
     width: 50vw;
     height: 100vh;
-    padding: 1vw;
 }
 
 .right{
@@ -224,7 +223,7 @@ body {
 }
 
 .content_text{
-    width: 70%;
+    width: 90%;
     margin-top: 3vw;
     font-family: 'Inter-Regular';
     color: #88c6fd;
@@ -262,8 +261,9 @@ body {
 
 #overview_text{
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.1vw;
     line-height: 4vh;
+    font-family: "Montserrat";
 }
 
 
@@ -284,7 +284,6 @@ body {
     display: flex; /* 使用 Flexbox */
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
     height: 100vh; /* 确保 div 有高度 */
 }
 
@@ -294,12 +293,29 @@ body {
     color: #FFFFFF;
     top: 50%;
     margin-top: 3vw;
-    margin-left: 3vw;
+    margin-left: 20vw;
 }
 
 #data_left img {
     max-width: 100%; /* 确保图片不会超出 div 宽度 */
     height: auto; /* 保持图片的原始宽高比 */
+}
+
+#data_text {
+    margin-left: 4vw;
+    font-size: 1.2vw;
+    font-family: "Montserrat";
+}
+
+.data_text_inner {
+    margin-top: 1.5vh;
+    text-align: center;
+}
+
+.emphasized-data {
+    font-size: 1.5vw; 
+    font-weight: bold; 
+    color: #ffffff;
 }
 
 
@@ -339,11 +355,59 @@ body {
     height: auto; /* 保持图片的原始宽高比 */
 }
 
+#finding_text {
+    margin-left: 4vw;
+    margin-bottom: 4vw;
+    font-size: 1.2vw;
+    font-family: "Montserrat";
+}
+
+.finding_text_inner {
+    margin-top: 1.5vh;
+    text-align: center;
+}
+
+#readmore {
+    top: 1vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.readmore-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 15vw;
+    margin-top: 0.9vw;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.readmore-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.readmore-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+}
 
 
 
 
-#user_left {
+#user_right {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center children vertically */
@@ -355,7 +419,7 @@ body {
     margin-top: 10vh;
 }
 
-#user_right {
+#user_left {
     display: flex; /* 使用 Flexbox */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
@@ -368,10 +432,58 @@ body {
     color: #FFFFFF;
     top: 50%;
     margin-top: 3vw;
-    margin-left: 3vw;
+    margin-right: 1vw;
+}
+#user_text {
+    margin-right: 2vw;
+    margin-bottom: 4vw;
+    font-size: 2vw;
+    font-family: "Montserrat";
 }
 
-#user_right img {
+.user_text_inner {
+    margin-top: 1.5vh;
+    text-align: center;
+}
+
+#user_left img {
     max-width: 100%; /* 确保图片不会超出 div 宽度 */
     height: auto; /* 保持图片的原始宽高比 */
+}
+
+#readmore_us {
+    top: 1vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.readmore-us-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 15vw;
+    margin-top: 0.9vw;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.readmore-us-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.readmore-us-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
 }

@@ -42,7 +42,7 @@
                     <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
                 </label>
                 <label for="user" class="user" onclick="scrollToElement('user-content');">
-                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                    <a><i class="fa fa-user-group" aria-hidden="true"></i>Us</a>
                 </label>
                 <div class="tab"></div>
             </nav>
@@ -110,7 +110,7 @@ map.on('load', function () {
 
         <div id="data-content" class="tab-content" style="display:block">
             <div id="data_left" class="left">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <img src="./frontend/resources/images/data_fare.png" alt="data overview">
             </div>
 
             <div id="data_right" class="right">
@@ -118,15 +118,40 @@ map.on('load', function () {
                     <span>Data</span>
                 </div>
                 <div id="data_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
+                    <div class="data_text_inner">
+                        <span>
+                            The raw dataset contains  
+                            <span class="emphasized-data">55 million</span> rows of data,
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            We randomly sampled 
+                            <span class="emphasized-data">100000</span> rows of data from it.
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            After removing data with taxi fare <span class="emphasized-data">less than 0</span>, 
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            And deleteing data point <span class="emphasized-data">outside</span> New York City. 
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            There are 
+                            <span class="emphasized-data">97,856</span> rows of valid data,
+                        </span>
+                    </div>
+                    <div class="data_text_inner">
+                        <span>
+                            A validity ratio of 
+                            <span class="emphasized-data">97.86%</span>.
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,47 +162,90 @@ map.on('load', function () {
                     <span>Findings</span>
                 </div>
                 <div id="finding_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">largest number</span>
+                            of passengers take a taxi in 
+                            <span class="emphasized-data">Manhattan</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">peak</span>
+                            of passenger journeys occurs  
+                            <span class="emphasized-data">between 7-8pm</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            The 
+                            <span class="emphasized-data">lowest</span>
+                            point of passenger travel occurs   
+                            <span class="emphasized-data">between 4-5am</span>. 
+                        </span>
+                    </div>
+                    <div class="finding_text_inner">
+                        <span>
+                            Average single journey prices are 
+                            <span class="emphasized-data">lowest</span> 
+                            <span class="emphasized-data">between 7-8pm</span>. 
+                        </span>
+                    </div>
+                </div>
+                <div id="readmore">
+                    <button type="button" class="readmore-btn">
+                        <i class="fa-solid fa-angle-right"></i> Read More
+                    </button>
                 </div>
             </div>
 
             <div id="finding_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <img src="./frontend/resources/images/finding_main.png" alt="finding_main">
             </div>
         </div>
 
+
         <div id="user-content" class="tab-content" style="display:block">
             <div id="user_left" class="left">
-                <div id="user_title" class="title">
-                    <span>Users</span>
-                </div>
-                <div id="user_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
+                <img src="./frontend/resources/images/group_logo.png" alt="our group logo">
             </div>
 
             <div id="user_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <div id="user_title" class="title">
+                    <span>About Us</span>
+                </div>
+                <div id="user_text" class="content_text">
+                    <div class="user_text_inner">
+                        <span> 
+                            We are group "It Just Works!".
+                        </span>
+                    </div>
+                </div>
+                <div id="readmore_us">
+                    <button type="button" class="readmore-us-btn">
+                        <i class="fa-solid fa-angle-right"></i> Read More
+                    </button>
+                </div>
             </div>
         </div>
 
         <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.readmore-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './findings.html';
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.readmore-us-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './about_us.html';
+                });
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 var searchButton = document.querySelector('.search-btn');
                 searchButton.addEventListener('click', function() {
