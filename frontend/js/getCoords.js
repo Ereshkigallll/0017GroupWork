@@ -1,6 +1,5 @@
 
-var preCenter = map.getCenter();
-var preradius = null;
+
 
 
 var features = null;
@@ -47,65 +46,26 @@ map.on('style.load', function () {
 });
 
 let mapMoveTimer;
-map.on('move', function () {
-    if (mapMoveTimer) {
-        clearTimeout(mapMoveTimer); // 取消之前的计时器
-    }
 
-    mapMoveTimer = setTimeout(function () {
-    }, 500); // 500毫秒延迟（可根据需要调整）
 
-    var bounds = map.getBounds();   // get the coordinates of bounds
-    var ne = bounds.getNorthEast(); // get the northeast coordinates of the bounding box
-    var sw = bounds.getSouthWest(); // get the southwest corner coordinates of the bounding box
-    var radius = Math.floor(haversineDistance(ne.lat, ne.lng, sw.lat, sw.lng) / 2);
-
-    var center = map.getCenter();
-    if (ifGetLocations(center, radius)) {
+function getCoords(){
         console.log("change!!!", preCenter, preradius);
-        var lng = center.lng; // get the longitude of the center
-        var lat = center.lat;  // get the latitude of the center
+        var lng = preCenter.lng; // get the longitude of the center
+        var lat = preCenter.lat;  // get the latitude of the center
 
         //get Records in the 1.25 preradius range are obtained 
         //based on the latitude and longitude of the preCenter
         //and update the heatmap source
         getLocations(lat, lng); 
 
-        console.log('radius(metre):', radius);
-    }
-});
+        console.log('radius(metre):', preradius);
+};
 
 
 
 
 
 
-
-/*In order to save server resources and avoid sending requests 
-**to the server as a result of minor changes, 
-**requests are sent to the nodeJs server only when the ratio of the 
-**current radius to the original radius column is less than 0.5 or
-**greater than 1.15 or the location of the center point in the map
-**changes by more than 0.25 of the original radius
-** (distance from the center point to the four corners)
-*/
-function ifGetLocations(center, rad) {
-    var scale = rad / preradius;
-    if (preradius == null || scale < 0.5 || scale > 1.15) {
-
-        console.log('radius change')
-        preradius = rad;
-        return true;
-    }
-    var distance = Math.floor(haversineDistance(center.lat, center.lng, preCenter.lat, preCenter.lng))
-    if (4 * distance > rad) {
-        console.log('center change')
-        preCenter = center;
-        return true;
-    }
-    return false
-
-}
 
 function getLocations(lat, lng) {
     var feats = null;
@@ -138,9 +98,6 @@ function getLocations(lat, lng) {
             console.log(1);
         })
         .catch(error => console.error('请求失败: ' + error));
-
-
-
 
 }
 
