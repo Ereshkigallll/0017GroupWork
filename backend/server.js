@@ -77,16 +77,22 @@ app.get('/futureCount', (req, res) => {
   var hours = currentDate.getHours();
   const minutes = currentDate.getMinutes();
 
+  var times={
+    time_group : null,
+    orders : []
+  }
   var time_group = getTimeGroup(minutes);
 
+  getFutureTime(hours, time_group, times);
+  
   // Execute query
-  db.query('SELECT Hour, time_group, COUNT(*) as total ' +
-    'FROM `trip` WHERE ' +
-    'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? '+
-    'and (Hour, time_group) IN '+ getFutureTime(hours, time_group) +
-    'GROUP BY Hour, time_group '+
-    'ORDER BY Hour, time_group;'
-    , [lon, lat, radius], (err, rows) => {
+  db.query(      'SELECT Hour, time_group, COUNT(*) as total ' +
+  'FROM `trip` WHERE ' +
+  'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? ' +
+  'AND (Hour, time_group) IN ' + `${times.time_group}` +
+  'GROUP BY Hour, time_group ' +
+  'ORDER BY FIELD(CONCAT(Hour, ",", time_group), ?);',
+   [lon, lat, radius, times.orders], (err, rows) => {
       if (err) {
         console.error('Err: ' + err.stack);
         return;
@@ -115,19 +121,27 @@ function getTimeGroup(minutes) {
   }
 };
 
-function getFutureTime(hours, time_group){
+function getFutureTime(hours, time_group, times){
   var res = '(';
+  
   for(var i = 0; i < 5; i++){
     var temp = '(';
-    temp = temp + hours.toString() + ','+time_group+'),';
+    var orders =  hours + ','+time_group;
+    temp = temp + orders+'),';
+
     res +=temp;
+
+    times.orders.push(orders);
+    
     if(++time_group>4){
       time_group-=4;
       hours++;
+      hours%=24;
     }
   }
-  res = res+'('+ hours.toString() + ','+time_group+')) '
-  console.log(res);
-  return res;
+  res = res+'('+ hours.toString() + ','+time_group.toString()+')) ';
+
+  times.orders.push(hours.toString() + ','+time_group.toString());
+  times.time_group = res;
 }
 

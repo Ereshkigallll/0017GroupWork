@@ -13,6 +13,10 @@
       <!-- 引入Mapbox的JavaScript API -->
       <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
       <!--<script src='js\js_for_search.js'></script>-->
+
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
      
 </head>
 <body>
@@ -100,9 +104,20 @@
         //     });
         // }
     </script>
+    <canvas id="myChart" width="400" height="200"></canvas>
 </body>
 </html>
 
+<script src="./frontend/js/updateCenAndRad.js"></script>
 <script src="./frontend/js/getCoords.js"></script>
+<script src="./frontend/js/getBarChart.js"> </script>
+<script type="text/javascript">
+    map.on('move', function(){
+        if(ifUpdate()){
+            getCoords();
+            getBarChart();
+        }
+    })
+</script>
 
 
