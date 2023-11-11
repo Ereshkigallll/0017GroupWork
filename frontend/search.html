@@ -45,7 +45,10 @@
             container: 'map-container',
             style: 'mapbox://styles/mapbox/streets-v11', 
             center: [-75, 40], // centre position
-            zoom: 9 // zoom level
+            zoom: 9, // zoom level
+            scrollZoom: false, // Disable scroll zoom
+            dragPan: false, // Disable drag pan
+            doubleClickZoom: false // Disable double-click zoom
         });
 
         document.getElementById('search-button').addEventListener('click', function () {
