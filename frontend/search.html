@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- 添加你的CSS链接 -->
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="resources\css\style_search.css">
-     <!-- 引入Mapbox的JavaScript API -->
+     <!-- MapboxJ avaScript API -->
      <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-     <!-- 引入Mapbox的CSS文件 -->
+     <!-- Mapbox CSS -->
      <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
-     <!-- 引入MapboxGeocoder插件 -->
+     <!-- MapboxGeocoder -->
      <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
      <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
-      <!-- 引入Mapbox的JavaScript API -->
-      <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-      <!--<script src='js\js_for_search.js'></script>-->
+    
+    <!--<script src='js\js_for_search.js'></script>-->
      
 </head>
 <body>
@@ -67,16 +66,16 @@
                         var mapCenter = map.getCenter();
 
                         // output the data of the centre
-                        console.log('地图中心坐标:', mapCenter.lng, mapCenter.lat);
+                        console.log('Map centre :', mapCenter.lng, mapCenter.lat);
 
                         // set the center as the result
                         map.setCenter(coordinates);
                     } else {
-                        alert('未找到地点');
+                        alert('Cna not find the place, please try again');
                     }
                 })
                 .catch(error => {
-                    console.error('地理编码请求失败:', error);
+                    console.error('Search error:', error);
                 });
         });
         
