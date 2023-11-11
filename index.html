@@ -43,7 +43,7 @@
                     <a><i class="fa fa-magnifying-glass" style="color: #ffffff;" aria-hidden="true"></i>Findings</a>
                 </label>
                 <label for="user" class="user" onclick="scrollToElement('user-content');">
-                    <a><i class="fa fa-user" aria-hidden="true"></i>User</a>
+                    <a><i class="fa fa-user-group" aria-hidden="true"></i>Us</a>
                 </label>
                 <div class="tab"></div>
             </nav>
@@ -207,30 +207,46 @@ map.on('load', function () {
             </div>
         </div>
 
+
         <div id="user-content" class="tab-content" style="display:block">
             <div id="user_left" class="left">
-                <div id="user_title" class="title">
-                    <span>Users</span>
-                </div>
-                <div id="user_text" class="content_text">
-                    <p>
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                        这里是您想添加的一段描述性文字，它会显示在标题下方。
-                    </p>
-                </div>
+                <img src="./frontend/resources/images/group_logo.png" alt="our group logo">
             </div>
 
             <div id="user_right" class="right">
-                <img src="./frontend/resources/images/example.png" alt="test">
+                <div id="user_title" class="title">
+                    <span>About Us</span>
+                </div>
+                <div id="user_text" class="content_text">
+                    <div class="user_text_inner">
+                        <span> 
+                            We are group "It Just Works!".
+                        </span>
+                    </div>
+                </div>
+                <div id="readmore_us">
+                    <button type="button" class="readmore-us-btn">
+                        <i class="fa-solid fa-angle-right"></i> Read More
+                    </button>
+                </div>
             </div>
         </div>
 
         <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.readmore-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './findings.html';
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.readmore-us-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './about_us.html';
+                });
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 var searchButton = document.querySelector('.search-btn');
                 searchButton.addEventListener('click', function() {

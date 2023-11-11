@@ -407,7 +407,7 @@ body {
 
 
 
-#user_left {
+#user_right {
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center children vertically */
@@ -419,7 +419,7 @@ body {
     margin-top: 10vh;
 }
 
-#user_right {
+#user_left {
     display: flex; /* 使用 Flexbox */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
@@ -432,10 +432,58 @@ body {
     color: #FFFFFF;
     top: 50%;
     margin-top: 3vw;
-    margin-left: 3vw;
+    margin-right: 1vw;
+}
+#user_text {
+    margin-right: 2vw;
+    margin-bottom: 4vw;
+    font-size: 2vw;
+    font-family: "Montserrat";
 }
 
-#user_right img {
+.user_text_inner {
+    margin-top: 1.5vh;
+    text-align: center;
+}
+
+#user_left img {
     max-width: 100%; /* 确保图片不会超出 div 宽度 */
     height: auto; /* 保持图片的原始宽高比 */
+}
+
+#readmore_us {
+    top: 1vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.readmore-us-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 15vw;
+    margin-top: 0.9vw;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.readmore-us-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.readmore-us-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
 }
