@@ -19,7 +19,7 @@
 <body>
     <div id="header">
         <div id="brand">
-            <span>RideLink</span>
+            <span id="return">RideLink</span>
         </div>
     </div>
     <div id="aaa">
@@ -80,6 +80,13 @@
                 .catch(error => {
                     console.error('Search error:', error);
                 });
+        });
+
+        var spanElement = document.getElementById('return');
+
+        // Add click event listener
+        spanElement.addEventListener('click', function() {
+             window.location.href = 'index.html';
         });
         
     </script>
