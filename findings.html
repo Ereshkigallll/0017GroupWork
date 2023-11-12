@@ -1,1 +1,154 @@
-test
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RideLink - Findings</title>
+        <link rel="stylesheet" type="text/css" href="./frontend/css/style_finding.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+        <link rel="icon" href="./frontend/resources/images/web_logo.ico">
+    </head>
+
+    <body>
+        <div id="header">
+            <div id="name">
+                <span>Our Findings</span>
+            </div>
+
+            <div id="search">
+                <button type="button" class="search-btn">
+                    <i class="fa fa-home"></i> Home
+                </button>
+            </div>
+        </div>
+
+        <div id="full_text">
+            <div class="title">
+                <span>1. Introduction</span>
+            </div>
+            <div class="para" id="para1">
+                <p>
+                    In this section, we'll tell you about our findings based on data from the New York Taxi dataset. 
+                    A comprehensive analysis of this data provides insights into the workings of the New York City taxi industry and the behaviour of its customers.
+                </p>
+            </div>
+            <div class="para" id="para2">
+                <p>
+                    Now, let's begin!
+                </p>
+            </div>
+
+            <div class="title">
+                <span>2. Data Analysis</span>
+            </div>
+            <div class="subtitle">
+                <span>2.1 Fare Distribution</span>
+            </div>
+            <div class="para" id="para3">
+                <p>
+                    Let's start by looking at the distribution of passenger payments to drivers across the various dimensions!
+                </p>
+            </div>
+            <div class="image" id="image1">
+                <img src="./frontend/resources/images/fare_distribution.png" alt="fare distribution"/>
+                <p class="caption">This figure shows the distribution of taxi trip fares in the $0 to $100 range, revealing that the majority of trips are relatively cheap.</p>
+            </div>
+            <div class="para" id="para4">
+                <p>
+                    From the above figure we can see that the distribution of fares shows a clear right skewed pattern, 
+                    indicating that most of the journeys have relatively low fares. 
+                    And this pattern is common in the taxi industry as most passengers tend to use taxis to complete short journeys.
+                    Based on the peak data in the histogram, we can surmise that this is the distance from the centre of New York City to the surrounding area, 
+                    as this is the most common travel distance in the city.
+                    Although the maximum value of the fare is set to $100 in this figure, there are in fact many outliers, such as fares in excess of $200. 
+                    But these outliers are small in number, perhaps reflecting the cost of longer trips or peak times.
+                    In addition to this, the KDE curve provides a smoothed view of the fare distribution, further confirming the observation that the majority of journeys have lower fares. 
+                    The curve peaks at lower fares and then gradually declines, indicating that the number of trips with lower fares is much higher than the number of trips with higher fares.
+                </p>
+            </div>
+            <div class="image" id="image2">
+                <img src="./frontend/resources/images/fare_by_hour.png" alt="fare each hour"/>
+                <p class="caption">This boxplot visualises the distribution of taxi journey costs by hour of the day, revealing fluctuations and outliers at different times of the day.</p>
+            </div>
+            <div class="para" id="para5">
+                <p>
+                    From the above figure we can see that the median fluctuates between time periods, 
+                    which means that the mainstream travelling distances are different or the traffic conditions are variable at different times of the day. 
+                    The outliers in the box plot mean that there are journeys that are longer than normal or that traffic conditions are poor at that time of day. 
+                    In addition to this, the 5am box has the longest length, meaning that costs fluctuate more at this time of day. 
+                    Shorter boxes mean that the costs are more similar for that time of day.
+                </p>
+            </div>
+            <div class="image" id="image3">
+                <img src="./frontend/resources/images/average_fare_by_hour.png" alt="average fare each hour"/>
+                <p class="caption">This figure clearly shows the average cost of a taxi journey for each hour of the day, revealing the fluctuating cost trends during the day and night.</p>
+            </div>
+            <div class="para" id="para6">
+                <p>
+                    The chart above shows how the average fare changes over the course of a day. 
+                    We can notice a significant rise in fares at 5am again, which could be due to an increase in costs due to a reduction in supply.
+                </p>
+            </div>
+            <div class="para" id="para7">
+                <p>
+                    Combining the three figures, we can find some discoveries about the fare:
+                </p>
+            </div>
+            <div class="para" id="para8">
+                <p>
+                    1. Most New York taxi fares are relatively low amounts because short journeys are more common in the city.
+                </p>
+            </div>
+            <div class="para" id="para9">
+                <p>
+                    2. Taxi fares are higher in the early morning hours, mainly due to the imbalance between supply and demand caused by fewer taxi drivers.
+                </p>
+            </div>
+            <div class="para" id="para10">
+                <p>
+                    3. Fare fluctuations are highly correlated with traffic conditions.
+                </p>
+            </div>
+            <div class="para" id="para11">
+                <p>
+                    The above findings can help taxi operating companies to better plan the operating hours of taxis as well as the number of taxis to be operated, 
+                    and at the same time help passengers to plan their travelling time wisely. More importantly, 
+                    it can help city administrators to arrange the public transport in the city in a more rational way, 
+                    and to reduce the tailpipe emission in order to reduce the heat island effect and air pollution in the city.
+                </p>
+            </div>
+        </div>
+
+        <div id="totop">
+            <button type="button" class="totop-btn">
+                <i class="fa-solid fa-arrow-up"></i>
+                <span class="text">To Top</span>
+            </button>
+        </div>
+
+
+
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.search-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './index.html';
+                });
+            });
+
+            var mybutton = document.getElementById("totop");
+            // 当用户向下滚动 20px 时显示按钮
+            window.onscroll = function() {scrollFunction()};
+            function scrollFunction() {
+                if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
+            }
+            // 当用户点击按钮时，回到页面顶部
+            mybutton.onclick = function() {
+                window.scrollTo({top: 0, behavior: 'smooth'}); // 对于 Chrome, Firefox, IE 和 Opera
+            }
+        </script>
+    </body>
+</html>
