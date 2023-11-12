@@ -13,8 +13,7 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
 
-    <!-- <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script> -->
-    
+    <script type="text/javascript" src="resources/js/jquery-1.4.2.min.js"></script>
 </head>
 
 <body>
@@ -153,6 +152,11 @@ map.on('load', function () {
                         </span>
                     </div>
                 </div>
+                <div id="rawdata">
+                    <button type="button" class="rawdata-btn">
+                        <i class="fa-solid fa-angle-right"></i> View Original Data Set
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -232,6 +236,13 @@ map.on('load', function () {
         </div>
 
         <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.rawdata-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = 'https://chriswhong.com/open-data/foil_nyc_taxi/';
+                });
+            });
+
             document.addEventListener('DOMContentLoaded', function() {
                 var searchButton = document.querySelector('.readmore-btn');
                 searchButton.addEventListener('click', function() {

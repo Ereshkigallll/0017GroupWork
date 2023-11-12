@@ -1,0 +1,201 @@
+* {
+    margin: 0; /* Set the surrounding margins to 0 */
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #1f2b3e; /* Set the background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: stretch;
+}
+
+/* Add new font */
+@font-face {
+    font-family: "Lato-Black";
+    src: url("../resources/font/Lato/Lato-Black.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Lato-Regular";
+    src: url("../resources/font/Lato/Lato-Regular.ttf") format("truetype");
+}
+
+/* Add new font */
+@font-face {
+    font-family: "Montserrat";
+    src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter-Regular";
+    src: url("../resources/font/Inter/static/Inter-Regular.ttf") format("truetype");
+}
+
+#header {
+    z-index: 10;
+    display: flex; /* Make header a flex container */
+    background-color: #0F1C2E;
+    width:100vw;
+    height: 12vh;
+    border-radius: 17px;
+    justify-content: center; 
+    align-items: center; 
+}
+
+#name {
+    margin-left: 2vw;
+    margin-right: 3vw;
+    margin-top: 0.3vh;
+    font-size: 4vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+}
+
+#search {
+    margin-top: 0.1vh;
+    margin-left: 57vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.search-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 10vw;
+    margin-top: 0.9vw;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.search-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.search-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+}
+
+#full_text {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.title {
+    display: block;
+    font-size: 3.5vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    margin-top: 5vh;
+}
+
+.subtitle {
+    display: block;
+    font-size: 2.5vw;
+    font-family: "Lato-Black";
+    color: #D0FFFE;
+    margin-top: 5vh;
+}
+
+.image {
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.caption {
+    color: #D6DAD9;
+    font-family: 'Inter-Regular';
+    font-size: 1vw;
+}
+
+.para{
+    font-family: 'Inter-Regular';
+    color: #88c6fd;
+    font-size: 1.5vw;
+    margin-top: 4vh;
+}
+
+#para2 {
+    font-size: 1.5vw; 
+    font-weight: bold; 
+    color: #ffffff;
+}
+
+#para8,
+#para9,
+#para10 {
+    font-size: 2vw;
+    color: #C7ECEB;
+}
+
+
+#totop {
+    position: fixed;
+    bottom: 10vh;
+    right: 5vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.totop-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 5vw;
+    margin-top: 1.5vh;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+    overflow: hidden;
+    transition: width 0.1s ease-in-out;
+}
+
+.totop-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.totop-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+    width: 10vw;
+}
+
+.totop-btn .text {
+    display: none;
+    visibility: hidden;
+    transition: visibility 0s, opacity 1s linear 1s;
+}
+
+.totop-btn:hover .text {
+    display: inline;
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* 移除延迟 */
+}

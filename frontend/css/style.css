@@ -284,6 +284,7 @@ body {
     display: flex; /* 使用 Flexbox */
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* 水平居中 */
+    align-items: center; /* Center children horizontally, if needed */
     height: 100vh; /* 确保 div 有高度 */
 }
 
@@ -293,7 +294,7 @@ body {
     color: #FFFFFF;
     top: 50%;
     margin-top: 3vw;
-    margin-left: 20vw;
+    margin-right: 1.8vw;
 }
 
 #data_left img {
@@ -302,7 +303,7 @@ body {
 }
 
 #data_text {
-    margin-left: 4vw;
+    margin-right: 2vw;
     font-size: 1.2vw;
     font-family: "Montserrat";
 }
@@ -316,6 +317,43 @@ body {
     font-size: 1.5vw; 
     font-weight: bold; 
     color: #ffffff;
+}
+
+#rawdata {
+    top: 1vh;
+    right: 2vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.rawdata-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 25vw;
+    margin-top: 1.5vh;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.rawdata-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.rawdata-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
 }
 
 

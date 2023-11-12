@@ -3,21 +3,20 @@
 <head>
     <!-- 添加你的CSS链接 -->
     <link rel="stylesheet" type="text/css" href="./frontend/css/style_search.css">
-     <!-- 引入Mapbox的JavaScript API -->
-     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-     <!-- 引入Mapbox的CSS文件 -->
-     <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
-     <!-- 引入MapboxGeocoder插件 -->
-     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
-     <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
-      <!-- 引入Mapbox的JavaScript API -->
-      <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
-      <!--<script src='js\js_for_search.js'></script>-->
+    <!-- 引入Mapbox的JavaScript API -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <!-- 引入Mapbox的CSS文件 -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <!-- 引入MapboxGeocoder插件 -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' rel='stylesheet' />
+    <!-- 引入Mapbox的JavaScript API -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <!--<script src='js\js_for_search.js'></script>-->
 
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-     
 </head>
 <body>
     <div id="header">
@@ -27,8 +26,12 @@
     </div>
     <div class="container">
         <div class="search-box">
-            <input type="text" id="search-input" placeholder="搜索地点">
-            <button id="search-button">搜索</button>
+            <input type="text" id="search-input" placeholder="Please search for the place where you started from">
+            <div id="search">
+                <button type="button" class="search-btn">
+                    <i class="fa fa-search"></i> Search
+                </button>
+            </div>
         </div>
     </div>
     <div class="container1">
@@ -41,9 +44,9 @@
 
         var map = new mapboxgl.Map({
             container: 'map-container',
-            style: 'mapbox://styles/mapbox/streets-v11', // 替换为你选择的地图样式
-            center: [-75, 40], // 默认地图中心坐标
-            zoom: 9 // 默认缩放级别
+            style: 'mapbox://styles/mapbox/dark-v10', // 替换为你选择的地图样式
+            center: [-74.0060, 40.7128], // 默认地图中心坐标
+            zoom: 10 // 默认缩放级别
         });
 
         document.getElementById('search-button').addEventListener('click', function () {
