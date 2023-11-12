@@ -16,12 +16,19 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./frontend/resources/images/web_logo.ico">
 
 </head>
 <body>
     <div id="header">
         <div id="brand">
             <span>RideLink</span>
+        </div>
+        <div id="home">
+            <button type="button" class="home-btn">
+                <i class="fa fa-home"></i> Home
+            </button>
         </div>
     </div>
     <div class="container">
@@ -46,8 +53,15 @@
             container: 'map-container',
             style: 'mapbox://styles/mapbox/dark-v10', // 替换为你选择的地图样式
             center: [-74.0060, 40.7128], // 默认地图中心坐标
-            zoom: 10 // 默认缩放级别
+            zoom: 12 // 默认缩放级别
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.home-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './index.html';
+                });
+            });
 
         document.getElementById('search-button').addEventListener('click', function () {
             var searchTerm = document.getElementById('search-input').value;

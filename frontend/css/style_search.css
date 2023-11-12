@@ -148,14 +148,58 @@ body {
     font-size: 4vw;
     font-family: "Lato-Black";
     color: #FFFFFF;
-    margin-left: 2vw;
+    margin-left: 1vw;
     margin-right: 3vw;
     margin-top: 1vw;
 }
 
-.header{
+#header{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 10;
+    display: flex; /* Make header a flex container */
+    background-color: #0F1C2E;
+    width:100vw;
+    height: 12vh;
+    border-radius: 17px;
+    justify-content: center; 
+    align-items: center; 
 }
 
+#home {
+    margin-top: 0.1vh;
+    margin-left: 60vw;
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 10px; /* Add some padding around the button */
+}
+
+.home-btn {
+    justify-content: center;
+    height: 3.3vw;
+    width: 10vw;
+    margin-top: 0.9vw;
+    background: transparent; /* Transparent background */
+    border: 0.3vw solid #FFFFFF; /* White border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding inside the button */
+    font-family: "Montserrat", sans-serif; /* Font family */
+    font-size: 1.5vw; /* Font size */
+    cursor: pointer; /* Cursor to pointer on hover */
+    display: flex; /* Use flex layout */
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Gap between icon and text */
+    transition: background-color 0.3s ease; /* Transition for background color */
+    border-radius: 50px; /* Rounded corners */
+}
+
+.home-btn i {
+    font-size: 1.5vw; /* Icon size to match text */
+}
+
+/* Add hover effect for background color */
+.home-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+}
