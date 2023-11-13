@@ -8,12 +8,12 @@ app.use(cors()); // Activate CORS
 
 // Create a connection to the database
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '123456',
-  port: '3306',
-  database: 'ridelink'
-});
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    port: '3306',
+    database: 'ridelink'
+  });
 
 // Connect to the database
 db.connect((err) => {

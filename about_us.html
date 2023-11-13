@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" type="text/css" href="./frontend/css/about_us_style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="./frontend/resources/images/web_logo.ico">
     <!-- the path may be changed -->
 
     <!-- #member {
@@ -33,15 +35,22 @@
 </head>
 
 <body>
+    <div id="header">
+        <div id="brand">
+            <span>It Just Works!</span>
+        </div>
+        <div id="home">
+            <button type="button" class="home-btn">
+                <i class="fa fa-home"></i> Home
+            </button>
+        </div>
+    </div>
     <div id="member">
-    <h1 style="color: white;">It Just Works</h1>
-    <hr>
-       
     <div style="display: flex; align-items: center;">
-        <img src="./frontend/resources/images/Qikai.jpg" alt="image" style="flex: 1; width: 500px; height: auto;">
+        <img src="./frontend/resources/images/Qikai.jpg" alt="image" style="flex: 1; width: 300px; height: auto;">
         <br>
         <div class="member_name" style="flex: 1;">
-            <span>Kaiqi Hu</span>
+            <span>Qikai Hu</span>
         </div>
         <!-- <p>abc</p> -->
     </div>
@@ -52,11 +61,11 @@
         </div>
         <!-- <p>abc</p> -->
         <br>
-        <img src="./frontend/resources/images/Yutong.jpg" alt="image" style="flex: 1; width: 500px; height: auto;">
+        <img src="./frontend/resources/images/Yutong.jpg" alt="image" style="flex: 1; width: 300px; height: auto;">
         </div>
     <br>
     <div style="display: flex; align-items: center;">
-        <img src="./frontend/resources/images/Zhouyu.png" alt="image" style="flex: 1; width: 500px; height: auto;">
+        <img src="./frontend/resources/images/Zhouyu.png" alt="image" style="flex: 1; width: 3000px; height: auto;">
         <br>
         <div class="member_name" style="flex: 1;">
             <span>Zhouyu Jiang</span>
@@ -70,9 +79,16 @@
         </div>
         <!-- <p>abc</p> -->
         <br>
-        <img src="./frontend/resources/images/Zekun.png" alt="image" style="flex: 1; width: 500px; height: auto;">
+        <img src="./frontend/resources/images/Zekun.png" alt="image" style="flex: 1; width: 300px; height: auto;">
     </div>
     </div>
-    <hr>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+                var searchButton = document.querySelector('.home-btn');
+                searchButton.addEventListener('click', function() {
+                    window.location.href = './index.html';
+                });
+            });
+    </script>
 </body>
 </html>

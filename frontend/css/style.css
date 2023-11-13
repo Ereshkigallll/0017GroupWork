@@ -185,8 +185,8 @@ body {
     position: relative;
     z-index: 1;
     width: 99vw;
-    height: 100vh;
-    margin-top: 3vw;
+    height: 80vh;
+    margin-top: 1vw;
 }
 
 
@@ -524,4 +524,13 @@ body {
 /* Add hover effect for background color */
 .readmore-us-btn:hover {
     background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white on hover */
+}
+
+#intro {
+    display: block;
+    font-size: 2vw;
+    font-family: "Lato-Black";
+    color: #FFFFFF;
+    margin-top: 15vh;
+    text-align: center;
 }
