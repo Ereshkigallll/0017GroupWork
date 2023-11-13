@@ -1,7 +1,7 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 
 
-// 配置项
+
 var options = {
     scales: {
         y: {
@@ -9,7 +9,7 @@ var options = {
         }
     },
     animation: {
-        // 添加动画效果
+        // add amination effect
         onComplete: function (animation) {
             document.getElementById('myChart').classList.add('animate__animated', 'animate__zoomIn');
         }
@@ -42,7 +42,7 @@ var BarData = {
     }]
 };
 
-// 创建柱状图
+// Create a bar chart
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: BarData,
@@ -73,7 +73,7 @@ function getBarChartData(lat, lng, radius) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // 处理从服务器返回的数据
+            // Process the data returned from the server
             JsonData = data;
             console.log(JsonData);
             JsonData.map(function (item) {
@@ -90,7 +90,7 @@ function getBarChartData(lat, lng, radius) {
             console.log(myChart.data);
 
         })
-        .catch(error => console.error('请求失败: ' + error));
+        .catch(error => console.error('Fail to request: ' + error));
 
 }
 

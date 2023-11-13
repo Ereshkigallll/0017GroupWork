@@ -11,7 +11,7 @@ var geojsonData =
 map.on('style.load', function () {
     map.addSource('HeatMap-Source', {
         type: 'geojson',
-        data: geojsonData // 包括新坐标数据的 GeoJSON
+        data: geojsonData 
     });
 
     //heatmap layer
@@ -21,7 +21,7 @@ map.on('style.load', function () {
         source: 'HeatMap-Source',
         paint: {
             'heatmap-weight': {
-                property: 'intensity', // 替换为您的数据属性名称
+                property: 'intensity', 
                 type: 'exponential',
                 stops: [
                     [0, 0],
@@ -74,7 +74,7 @@ function getLocations(lat, lng) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // 处理从服务器返回的数据
+            // deal data
             JsonData = data;
             features = JsonData.map(function (item) {
                 return {
@@ -97,25 +97,25 @@ function getLocations(lat, lng) {
 
             console.log(1);
         })
-        .catch(error => console.error('请求失败: ' + error));
+        .catch(error => console.error('Fail to request: ' + error));
 
 }
 
 function haversineDistance(lat1, lon1, lat2, lon2) {
-    // 将经纬度从度转换为弧度
+    // Convert latitude and longitude from degrees to radians
     lat1 = toRadians(lat1);
     lon1 = toRadians(lon1);
     lat2 = toRadians(lat2);
     lon2 = toRadians(lon2);
 
-    // Haversine 公式计算距离
+    // Haversine formula calculates distance
     var dlat = lat2 - lat1;
     var dlon = lon2 - lon1;
     var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
         Math.cos(lat1) * Math.cos(lat2) *
         Math.sin(dlon / 2) * Math.sin(dlon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var radius = 6371000; // 地球半径，单位为米
+    var radius = 6371000; // The radius of the earth, in meters
     return radius * c;
 }
 

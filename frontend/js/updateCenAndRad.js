@@ -13,11 +13,11 @@ var preradius = null;
 
 function ifUpdate(){
     if (mapMoveTimer) {
-        clearTimeout(mapMoveTimer); // 取消之前的计时器
+        clearTimeout(mapMoveTimer); // Cancel the previous timer
     }
 
     mapMoveTimer = setTimeout(function () {
-    }, 500); // 500毫秒延迟（可根据需要调整）
+    }, 500); // 500 ms delay
 
     var bounds = map.getBounds();   // get the coordinates of bounds
     var ne = bounds.getNorthEast(); // get the northeast coordinates of the bounding box
