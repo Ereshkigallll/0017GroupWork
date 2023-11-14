@@ -1,7 +1,3 @@
-
-
-
-
 var features = null;
 var geojsonData =
 {
@@ -100,26 +96,5 @@ function getLocations(lat, lng) {
 
 }
 
-function haversineDistance(lat1, lon1, lat2, lon2) {
-    // Convert latitude and longitude from degrees to radians
-    lat1 = toRadians(lat1);
-    lon1 = toRadians(lon1);
-    lat2 = toRadians(lat2);
-    lon2 = toRadians(lon2);
-
-    // Haversine Formula to calculate the distance
-    var dlat = lat2 - lat1;
-    var dlon = lon2 - lon1;
-    var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
-        Math.cos(lat1) * Math.cos(lat2) *
-        Math.sin(dlon / 2) * Math.sin(dlon / 2);
-    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var radius = 6371000; // Radius of the Earth in metres
-    return radius * c;
-}
-
-function toRadians(degrees) {
-    return degrees * (Math.PI / 180);
-}
 
 

@@ -52,7 +52,8 @@ var myChart = new Chart(ctx, {
 
 
 //record the new data
-
+var controller = new AbortController();
+var signal = controller.signal;
 
 function getBarChart() {
     var lng = preCenter.lng; // get the longitude of the center
@@ -69,7 +70,12 @@ function getBarChartData(lat, lng, radius) {
         data: []
     }
     var url = `http://localhost:8891/getFutureCount?lat=${lat}&lon=${lng}&radius=${radius}`
-    fetch(url)
+    
+    controller.abort(); 
+    controller = new AbortController();
+    signal = controller.signal;
+
+    fetch(url,{signal})
         .then(response => response.json())
         .then(data => {
             // Processing of data returned from the server
