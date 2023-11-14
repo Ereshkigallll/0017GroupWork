@@ -242,10 +242,10 @@ body {
 }
 
 #overview_right {
-    display: flex; /* 使用 Flexbox */
+    display: flex; /* use Flexbox */
     align-items: center;
-    justify-content: center; /* 水平居中 */
-    height: 100vh; /* 确保 div 有高度 */
+    justify-content: center; /* horizontal centering */
+    height: 100vh; /* Make sure the div has a height */
 }
 
 #overview_title_1,
@@ -281,11 +281,11 @@ body {
 }
 
 #data_right {
-    display: flex; /* 使用 Flexbox */
+    display: flex; 
     flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* 水平居中 */
+    justify-content: center; 
     align-items: center; /* Center children horizontally, if needed */
-    height: 100vh; /* 确保 div 有高度 */
+    height: 100vh; 
 }
 
 #data_title{
@@ -298,8 +298,8 @@ body {
 }
 
 #data_left img {
-    max-width: 100%; /* 确保图片不会超出 div 宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
+    max-width: 100%; /* Make sure the image does not exceed the div width */
+    height: auto; /* Keep the original aspect ratio of the image */
 }
 
 #data_text {
@@ -373,10 +373,10 @@ body {
 }
 
 #finding_right {
-    display: flex; /* 使用 Flexbox */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: 100vh; /* 确保 div 有高度 */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
 #finding_title{
@@ -389,8 +389,8 @@ body {
 }
 
 #finding_right img {
-    max-width: 100%; /* 确保图片不会超出 div 宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
+    max-width: 100%; 
+    height: auto; 
 }
 
 #finding_text {
@@ -458,10 +458,10 @@ body {
 }
 
 #user_left {
-    display: flex; /* 使用 Flexbox */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    height: 100vh; /* 确保 div 有高度 */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
 }
 
 #user_title{
@@ -485,8 +485,8 @@ body {
 }
 
 #user_left img {
-    max-width: 100%; /* 确保图片不会超出 div 宽度 */
-    height: auto; /* 保持图片的原始宽高比 */
+    max-width: 100%; 
+    height: auto; 
 }
 
 #readmore_us {

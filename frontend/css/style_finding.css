@@ -197,7 +197,7 @@ body {
     display: inline;
     visibility: visible;
     opacity: 1;
-    transition-delay: 0s; /* 移除延迟 */
+    transition-delay: 0s; /* remove delay */
 }
 
 #vidoe {
