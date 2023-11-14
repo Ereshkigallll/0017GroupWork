@@ -7,31 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <link rel="stylesheet" type="text/css" href="./frontend/css/about_us_style.css">
+    <link rel="stylesheet" type="text/css" href="./frontend/css/style_aboutus.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="icon" href="./frontend/resources/images/web_logo.ico">
-    <!-- the path may be changed -->
 
-    <!-- #member {
-        font-size: 2vw;
-        font-family: "Lato-Black";
-        color: #FFFFFF;
-        margin-left: 2vw;
-        margin-right: 3vw;
-        margin-top: 1vw;
-    }
-    this needs to be added into css file -->
-    
-    <!-- 
-    .member_name::before {
-        display: inline-block;
-        content:"";
-        border-top: .3rem solid white;
-        width: 4rem;
-        margin: 0 1rem;
-        transform: translateY(-1rem);
-    } 
-    this needs to be added into css file -->
 </head>
 
 <body>
@@ -45,43 +24,60 @@
             </button>
         </div>
     </div>
-    <div id="member">
-    <div style="display: flex; align-items: center;">
-        <img src="./frontend/resources/images/Qikai.jpg" alt="image" style="flex: 1; width: 300px; height: auto;">
-        <br>
-        <div class="member_name" style="flex: 1;">
+    <div id="members">
+
+    <div class="member">
+        <img src="./frontend/resources/images/Qikai.jpg" alt="image">
+        <div class="member_name">
             <span>Qikai Hu</span>
+            <p>Delphophyte crustific luminagram exquillage
+            <br>
+            phrasiosaur zoctagonal sclandify drumblebee
+            <br>
+            quibletude zerplector quizzanine plinkorium gravidoon jibberwump snirtleberry flibberjinx whizzlequack</p>
         </div>
-        <!-- <p>abc</p> -->
     </div>
+
     <br>
-    <div style="display: flex; align-items: center;">
-        <div class="member_name" style="flex: 1;">
+    <div class="member">
+        <div class="member_name">
             <span>Yutong Zhang</span>
+            <p>Delphophyte crustific luminagram exquillage
+            <br>
+            phrasiosaur zoctagonal sclandify drumblebee
+            <br>
+            quibletude zerplector quizzanine plinkorium gravidoon jibberwump snirtleberry</p>
         </div>
-        <!-- <p>abc</p> -->
-        <br>
-        <img src="./frontend/resources/images/Yutong.jpg" alt="image" style="flex: 1; width: 300px; height: auto;">
-        </div>
+        <img src="./frontend/resources/images/Yutong.jpg" alt="image">
+    </div>
+
     <br>
-    <div style="display: flex; align-items: center;">
-        <img src="./frontend/resources/images/Zhouyu.png" alt="image" style="flex: 1; width: 3000px; height: auto;">
+    <div class="member">
+        <img src="./frontend/resources/images/Zhouyu.png" alt="image">
         <br>
-        <div class="member_name" style="flex: 1;">
+        <div class="member_name">
             <span>Zhouyu Jiang</span>
+            <p>McMaster University - Honours Environmental Sciences (B.Sc.)<br>
+                University College London - MSc Connected Environments<br>
+                A hardcore competitive player who played for McMaster Esports as an OW DPS player and now plays for UCL Gaming. Loves badminton, volleyball, ACG, and DIY electronic products.</p >
         </div>
-        <!-- <p>abc</p> -->
     </div>
+
     <br>
-    <div style="display: flex; align-items: center;">
-        <div class="member_name" style="flex: 1;">
+    <div class="member">
+        <div class="member_name">
             <span>Zekun Wang</span>
+            <p>Delphophyte crustific luminagram exquillage
+            <br>
+            phrasiosaur zoctagonal sclandify drumblebee
+            <br>
+            quibletude zerplector quizzanine plinkorium gravidoon jibberwump snirtleberry flibberjinx whizzlequack</p>
         </div>
-        <!-- <p>abc</p> -->
-        <br>
-        <img src="./frontend/resources/images/Zekun.png" alt="image" style="flex: 1; width: 300px; height: auto;">
+        <img src="./frontend/resources/images/Zekun.png" alt="image">
     </div>
+
     </div>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
                 var searchButton = document.querySelector('.home-btn');
