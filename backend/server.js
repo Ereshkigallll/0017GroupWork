@@ -5,7 +5,6 @@ const app = express();
 const port = 3000;
 
 app.use(cors()); // Activate CORS
-
 // Create a connection to the database
 const db = mysql.createConnection({
     host: 'localhost',
@@ -25,8 +24,7 @@ db.connect((err) => {
 });
 
 
-app.use(express.static('public'));
-
+app.use(express.static('../'));
 
 
 app.listen(port, () => {
