@@ -70,7 +70,7 @@ function getCoords(){
 function getLocations(lat, lng) {
     var feats = null;
     var radius = preradius*1.25;
-    var url = `http://localhost:3000/getNearByTaxi?lat=${lat}&lon=${lng}&radius=${radius}`
+    var url = `http://localhost:8891/getNearByTaxi?lat=${lat}&lon=${lng}&radius=${radius}`
     fetch(url)
         .then(response => response.json())
         .then(data => {

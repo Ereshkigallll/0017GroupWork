@@ -2,7 +2,7 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 const app = express();
-const port = 3000;
+const port = 8891;
 
 app.use(cors()); // Activate CORS
 // Create a connection to the database
@@ -26,6 +26,10 @@ db.connect((err) => {
 
 app.use(express.static('../'));
 
+app.get('/', (req, res) => {
+  // redirect
+  res.redirect('../index.html');
+});
 
 app.listen(port, () => {
   console.log(`server is listening port ${port}`);
