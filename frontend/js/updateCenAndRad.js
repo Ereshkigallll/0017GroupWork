@@ -1,6 +1,6 @@
 var preCenter = map.getCenter();
 var preradius = null;
-
+let mapMoveTimer;
 
 /*In order to save server resources and avoid sending requests 
 **to the server as a result of minor changes, 

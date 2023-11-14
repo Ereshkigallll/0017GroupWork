@@ -45,7 +45,7 @@ map.on('style.load', function () {
     });
 });
 
-let mapMoveTimer;
+
 
 
 function getCoords(){
