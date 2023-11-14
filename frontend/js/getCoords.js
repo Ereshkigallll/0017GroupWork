@@ -11,7 +11,7 @@ var geojsonData =
 map.on('style.load', function () {
     map.addSource('HeatMap-Source', {
         type: 'geojson',
-        data: geojsonData 
+        data: geojsonData // Including new coordinate data for the GeoJSON
     });
 
     //heatmap layer
@@ -21,7 +21,7 @@ map.on('style.load', function () {
         source: 'HeatMap-Source',
         paint: {
             'heatmap-weight': {
-                property: 'intensity', 
+                property: 'intensity', // Replace with the name of data property
                 type: 'exponential',
                 stops: [
                     [0, 0],
@@ -74,7 +74,6 @@ function getLocations(lat, lng) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // deal data
             JsonData = data;
             features = JsonData.map(function (item) {
                 return {
@@ -108,14 +107,14 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
     lat2 = toRadians(lat2);
     lon2 = toRadians(lon2);
 
-    // Haversine formula calculates distance
+    // Haversine Formula to calculate the distance
     var dlat = lat2 - lat1;
     var dlon = lon2 - lon1;
     var a = Math.sin(dlat / 2) * Math.sin(dlat / 2) +
         Math.cos(lat1) * Math.cos(lat2) *
         Math.sin(dlon / 2) * Math.sin(dlon / 2);
     var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    var radius = 6371000; // The radius of the earth, in meters
+    var radius = 6371000; // Radius of the Earth in metres
     return radius * c;
 }
 

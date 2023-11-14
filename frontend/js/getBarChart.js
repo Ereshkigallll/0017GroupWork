@@ -1,7 +1,6 @@
 var ctx = document.getElementById('myChart').getContext('2d');
 
 
-
 var options = {
     scales: {
         y: {
@@ -9,7 +8,7 @@ var options = {
         }
     },
     animation: {
-        // add amination effect
+        // Add animation effects
         onComplete: function (animation) {
             document.getElementById('myChart').classList.add('animate__animated', 'animate__zoomIn');
         }
@@ -42,7 +41,7 @@ var BarData = {
     }]
 };
 
-// Create a bar chart
+// Creat Bar Charts
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: BarData,
@@ -73,7 +72,7 @@ function getBarChartData(lat, lng, radius) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // Process the data returned from the server
+            // Processing of data returned from the server
             JsonData = data;
             console.log(JsonData);
             JsonData.map(function (item) {
@@ -90,7 +89,7 @@ function getBarChartData(lat, lng, radius) {
             console.log(myChart.data);
 
         })
-        .catch(error => console.error('Fail to request: ' + error));
+        .catch(error => console.error('Request Failed: ' + error));
 
 }
 

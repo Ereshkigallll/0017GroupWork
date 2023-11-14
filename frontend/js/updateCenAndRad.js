@@ -13,7 +13,7 @@ var preradius = null;
 
 function ifUpdate(){
     if (mapMoveTimer) {
-        clearTimeout(mapMoveTimer); // Cancel the previous timer
+        clearTimeout(mapMoveTimer); // Cancell the previous timer
     }
 
     mapMoveTimer = setTimeout(function () {

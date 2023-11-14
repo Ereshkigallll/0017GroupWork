@@ -35,13 +35,13 @@ body {
 }
 
 .container {
-    width: 100%; /* 页面宽度的75% */
-    height: 100%; /* 页面高度的75% */
+    width: 100%; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-top: 1cm; 
     padding-right:4cm;
     padding-bottom:1cm;
     padding-left:4cm;
@@ -49,13 +49,13 @@ body {
 }
 
 .container1 {
-    width: 100%; /* 页面宽度的75% */
-    height: 100%; /* 页面高度的75% */
+    width: 100%; 
+    height: 100%; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 */
+    padding-top: 1cm; 
     padding-right:4cm;
     padding-bottom:1cm;
     padding-left:4cm;
@@ -70,7 +70,7 @@ body {
     width: 70%;
 }
 
-/* 搜索框 */
+/* search box */
 #search-input {
     font-family: 'Lato-Black';
     font-size: 1vw;
@@ -84,7 +84,7 @@ body {
     margin-right: 2vw;
 }
 
-/* 搜索按钮 */
+/* search buttom */
 #search {
     right: 5vw;
     display: flex;
@@ -122,23 +122,8 @@ body {
 /* 地图容器 */
 #map-container {
     width: 100%;
-    flex: 1; /* 填充剩余空间 */
-    /* 在这里添加地图样式 */
+    flex: 1; 
 }
-
-/*.container1{
-    width: 100%; /* 页面宽度的75% 
-    height: 100%; /* 页面高度的75% 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1cm; /* 上右下左的边距各为页面宽度的1/8 
-    padding-right:2cm;
-    padding-left:2cm;
-    box-sizing: border-box;
-}*/
-
 
 #header {
     display: flex; /* Make header a flex container */
