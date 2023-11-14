@@ -70,7 +70,7 @@ function getCoords(){
 function getLocations(lat, lng) {
     var feats = null;
     var radius = preradius*1.25;
-    var url = `http://localhost:3000/homeLocation?lat=${lat}&lon=${lng}&radius=${radius}`
+    var url = `http://localhost:3000/getNearByTaxi?lat=${lat}&lon=${lng}&radius=${radius}`
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -96,7 +96,7 @@ function getLocations(lat, lng) {
 
             console.log(1);
         })
-        .catch(error => console.error('请求失败: ' + error));
+        .catch(error => console.error('Fail to request: ' + error));
 
 }
 

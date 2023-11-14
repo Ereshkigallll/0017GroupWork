@@ -27,23 +27,13 @@ db.connect((err) => {
 
 app.use(express.static('public'));
 
-// Set up routes and process database requests
-app.get('/data', (req, res) => {
-  // Execute query
-  db.query('SELECT * FROM trip LIMIT 10', (err, rows) => {
-    if (err) {
-      console.error('Err: ' + err.stack);
-      return;
-    }
-    res.json(rows);
-  });
-});
+
 
 app.listen(port, () => {
   console.log(`server is listening port ${port}`);
 });
 
-app.get('/homeLocation', (req, res) => {
+app.get('/getNearByTaxi', (req, res) => {
   const lat = parseFloat(req.query.lat);
   const lon = parseFloat(req.query.lon);
   const radius = parseFloat(req.query.radius);
@@ -58,7 +48,8 @@ app.get('/homeLocation', (req, res) => {
   // Execute query
   db.query('SELECT pickup_longitude, pickup_latitude, ST_Distance_Sphere(pickup_location, POINT(?,?)) AS distance ' +
     'FROM `trip` WHERE ' +
-    'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? and `Hour` =' + hours + ' and time_group = ' + time_group
+    'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? and `Hour` =' + hours + ' and time_group = ' + time_group+
+    ' LIMIT 100000;'
     , [lon, lat, lon, lat, radius], (err, rows) => {
       if (err) {
         console.error('Err: ' + err.stack);
@@ -68,7 +59,7 @@ app.get('/homeLocation', (req, res) => {
     });
 });
 
-app.get('/futureCount', (req, res) => {
+app.get('/getFutureCount', (req, res) => {
   const lat = parseFloat(req.query.lat);
   const lon = parseFloat(req.query.lon);
   const radius = parseFloat(req.query.radius);
@@ -91,7 +82,7 @@ app.get('/futureCount', (req, res) => {
   'ST_Distance_Sphere(pickup_location, POINT(?,?)) < ? ' +
   'AND (Hour, time_group) IN ' + `${times.time_group}` +
   'GROUP BY Hour, time_group ' +
-  'ORDER BY FIELD(CONCAT(Hour, ",", time_group), ?);',
+  'ORDER BY FIELD(CONCAT(Hour, ",", time_group), ?) LIMIT 100000;',
    [lon, lat, radius, times.orders], (err, rows) => {
       if (err) {
         console.error('Err: ' + err.stack);
