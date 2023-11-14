@@ -69,7 +69,7 @@ function getBarChartData(lat, lng, radius) {
         labels: [],
         data: []
     }
-    var url = `http://localhost:3000/futureCount?lat=${lat}&lon=${lng}&radius=${radius}`
+    var url = `http://localhost:3000/getFutureCount?lat=${lat}&lon=${lng}&radius=${radius}`
     fetch(url)
         .then(response => response.json())
         .then(data => {
