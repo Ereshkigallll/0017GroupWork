@@ -34,6 +34,11 @@ body {
     src: url("../resources/font/Inter/static/Inter-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "TW-Cen";
+    src: url("../resources/font/Tw Cen MT/Tw\ Cen\ MT.ttf") format("truetype");
+}
+
 #header {
     position:fixed;
     z-index: 10;
@@ -47,11 +52,11 @@ body {
 
 #brand {
     position:fixed;
-    left: 2vw;
-    right: 3vw;
+    left: 3vw;
+    right: 2vw;
     top: 0.8vw;
     font-size: 4vw;
-    font-family: "Lato-Black";
+    font-family: "TW-Cen";
     color: #FFFFFF;
 }
 
@@ -86,11 +91,11 @@ body {
     position: relative;
     z-index: -1;
     color: #333;
-    font-size: 1.5vw;
+    font-size: 1.8vw;
     font-weight: 500;
     text-decoration: none;
     color: #FFFFFF;
-    font-family: "Montserrat";
+    font-family: "TW-Cen";
 }
 .wrapper nav label a i{
     font-size: 1.5vw;
@@ -152,7 +157,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */
@@ -337,7 +342,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */
@@ -423,7 +428,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */
@@ -507,7 +512,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */
