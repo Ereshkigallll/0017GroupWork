@@ -29,6 +29,11 @@ body {
     src: url("../resources/font/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "TW-Cen";
+    src: url("../resources/font/Tw Cen MT/Tw\ Cen\ MT.ttf") format("truetype");
+}
+
 #header {
     display: flex;
     align-items: center;
@@ -109,7 +114,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */

@@ -34,6 +34,11 @@ body {
     src: url("../resources/font/Inter/static/Inter-Regular.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "TW-Cen";
+    src: url("../resources/font/Tw Cen MT/Tw\ Cen\ MT.ttf") format("truetype");
+}
+
 #header {
     z-index: 10;
     display: flex; /* Make header a flex container */
@@ -46,11 +51,11 @@ body {
 }
 
 #name {
-    margin-left: 2vw;
+    margin-left: 1vw;
     margin-right: 3vw;
     margin-top: 0.3vh;
     font-size: 4vw;
-    font-family: "Lato-Black";
+    font-family: "TW-Cen";
     color: #FFFFFF;
 }
 
@@ -72,7 +77,7 @@ body {
     border: 0.3vw solid #FFFFFF; /* White border */
     color: white; /* White text color */
     padding: 10px 20px; /* Padding inside the button */
-    font-family: "Montserrat", sans-serif; /* Font family */
+    font-family: "TW-Cen", sans-serif; /* Font family */
     font-size: 1.5vw; /* Font size */
     cursor: pointer; /* Cursor to pointer on hover */
     display: flex; /* Use flex layout */
