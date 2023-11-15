@@ -23,7 +23,8 @@ CREATE TABLE `trip` (
 LOAD DATA LOCAL INFILE'C:/Users/84241/Desktop/wa/0017GroupWork/dataset/final_data.csv'
 INTO TABLE `trip`
 FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
-IGNORE 1 LINES (tid, fare_amount, pickup_datetime, pickup_longitude, pickup_latitude, dropoff_longitude, dropoff_latitude, Year, Month, Day, Hour, time_group)
+IGNORE 1 LINES (tid, fare_amount, pickup_datetime, pickup_longitude, pickup_latitude, 
+                dropoff_longitude, dropoff_latitude, Year, Month, Day, Hour, time_group)
 SET pickup_location = ST_GeomFromText(CONCAT('POINT(', pickup_longitude, ' ', pickup_latitude, ')'));
 
 ALTER TABLE `trip` MODIFY COLUMN `pickup_location` POINT NOT NULL;
