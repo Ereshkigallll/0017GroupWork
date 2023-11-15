@@ -7,12 +7,12 @@ const port = 8891;
 app.use(cors()); // Activate CORS
 // Create a connection to the database
 const db = mysql.createConnection({
-    host: 'casa0017.cetools.org',
-    user: 'ucfnuax',
-    password: 'voyojuweja',
-    port: '3306',
-    database: 'ucfnuax'
-  });
+      host: 'casa0017.cetools.org',
+      user: 'ucfnuax',
+      password: 'voyojuweja',
+      port: '3306',
+      database: 'ucfnuax'
+    });
 
 // Connect to the database
 db.connect((err) => {
