@@ -69,7 +69,7 @@ function getBarChartData(lat, lng, radius) {
         labels: [],
         data: []
     }
-    var url = `http://localhost:8891/getFutureCount?lat=${lat}&lon=${lng}&radius=${radius}`
+    var url = `http://localhost:8892/getFutureCount?lat=${lat}&lon=${lng}&radius=${radius}`
     
     controller.abort(); 
     controller = new AbortController();
